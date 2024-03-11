@@ -1,12 +1,10 @@
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Canvas, extend, useThree } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
-import { useGLTF, Html } from '@react-three/drei';
 
 import Floor from './components/Floor';
 import TV from './components/TV';
-// import { CC, JNJ, DFS, TABOOLA, NA, CC92MB, JNJ83MB, DFS97MB, TABOOLA_70MB, NA22MB, SAMSHA } from './assets/index.js';
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import JNJ from './assets/jnjvision.mp4';
@@ -15,20 +13,19 @@ import NA from './assets/new-alternatives.mp4';
 import TABOOLA from './assets/taboola.mp4';
 
 import './styles.css';
-export const UseThreeSize = () => {
-  const size = useThree();
-  console.log(size);
-};
+// export const UseThreeSize = () => {
+//   const size = useThree();
+//   console.log(size);
+// };
 
 extend({ OutlinePass });
 
 export const App = () => {
-
   return (
     <main>
       <Canvas
         style={{ width: '100%', height: '100vh' }}
-        camera={{ position: [0, 0, 25] }}
+        camera={{ position: [0, 0, 25] }} onWheel={e => console.log('delaX, deltaY, deltaZ', e.deltaX, e.deltaY, e.deltaZ)}
       >
         <Suspense fallback={null}>
           {/* <ScrollControls>

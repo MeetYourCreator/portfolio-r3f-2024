@@ -1,0 +1,5 @@
+{
+  "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.trimTrailingWhitespace": true
+}
