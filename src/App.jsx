@@ -10,6 +10,9 @@ import TV from './components/TV';
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import JNJ from './assets/jnjvision.mp4';
+import SAMSHA from './assets/samsha.mp4';
+import NA from './assets/new-alternatives.mp4';
+import TABOOLA from './assets/taboola.mp4';
 
 export const UseThreeSize = () => {
   const size = useThree();
@@ -62,7 +65,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            // url={SAMSHA}
+            url={SAMSHA}
             zMeshPos={5}
             yMeshPos={4}
             xMeshPos={4}
@@ -72,7 +75,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            // url={NA22MB}
+            url={NA}
             zMeshPos={3}
             yMeshPos={3}
             xMeshPos={5}
@@ -82,7 +85,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            // url={TABOOLA_70MB}
+            url={TABOOLA}
             zMeshPos={1}
             yMeshPos={2}
             xMeshPos={6}
