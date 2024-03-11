@@ -6,8 +6,9 @@ import { useGLTF, Html } from '@react-three/drei';
 
 import Floor from './components/Floor';
 import TV from './components/TV';
-import { CC, JNJ, DFS, TABOOLA, NA, CC92MB, JNJ83MB, DFS97MB, TABOOLA_70MB, NA22MB, SAMSHA } from './assets/index.js';
+// import { CC, JNJ, DFS, TABOOLA, NA, CC92MB, JNJ83MB, DFS97MB, TABOOLA_70MB, NA22MB, SAMSHA } from './assets/index.js';
 
+import CC92MB from './assets/coca-cola_92mb.mp4';
 export const UseThreeSize = () => {
   const size = useThree();
   console.log(size);
@@ -28,7 +29,7 @@ export const App = () => {
           <Scroll> */}
           <TV
             src='tvPlane.gltf'
-            url={DFS97MB}
+            // url={DFS97MB}
             zMeshPos={9}
             yMeshPos={6}
             xMeshPos={2}
@@ -49,7 +50,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            url={JNJ83MB}
+            // url={JNJ83MB}
             zMeshPos={7}
             yMeshPos={5}
             xMeshPos={3}
@@ -59,7 +60,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            url={SAMSHA}
+            // url={SAMSHA}
             zMeshPos={5}
             yMeshPos={4}
             xMeshPos={4}
@@ -69,7 +70,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            url={NA22MB}
+            // url={NA22MB}
             zMeshPos={3}
             yMeshPos={3}
             xMeshPos={5}
@@ -79,7 +80,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            url={TABOOLA_70MB}
+            // url={TABOOLA_70MB}
             zMeshPos={1}
             yMeshPos={2}
             xMeshPos={6}
