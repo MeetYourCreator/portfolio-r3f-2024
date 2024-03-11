@@ -14,6 +14,7 @@ import SAMSHA from './assets/samsha.mp4';
 import NA from './assets/new-alternatives.mp4';
 import TABOOLA from './assets/taboola.mp4';
 
+import './styles.css';
 export const UseThreeSize = () => {
   const size = useThree();
   console.log(size);
