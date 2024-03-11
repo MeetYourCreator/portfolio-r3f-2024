@@ -9,6 +9,8 @@ import TV from './components/TV';
 // import { CC, JNJ, DFS, TABOOLA, NA, CC92MB, JNJ83MB, DFS97MB, TABOOLA_70MB, NA22MB, SAMSHA } from './assets/index.js';
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
+import JNJ from './assets/jnjvision.mp4';
+
 export const UseThreeSize = () => {
   const size = useThree();
   console.log(size);
@@ -50,7 +52,7 @@ export const App = () => {
           />
           <TV
             src='tvPlane.gltf'
-            // url={JNJ83MB}
+            url={JNJ}
             zMeshPos={7}
             yMeshPos={5}
             xMeshPos={3}
