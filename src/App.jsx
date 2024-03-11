@@ -7,7 +7,7 @@ import { useGLTF, Html } from '@react-three/drei';
 import Floor from './components/Floor';
 import TV from './components/TV';
 // import { CC, JNJ, DFS, TABOOLA, NA, CC92MB, JNJ83MB, DFS97MB, TABOOLA_70MB, NA22MB, SAMSHA } from './assets/index.js';
-
+import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
 export const UseThreeSize = () => {
   const size = useThree();
@@ -29,7 +29,7 @@ export const App = () => {
           <Scroll> */}
           <TV
             src='tvPlane.gltf'
-            // url={DFS97MB}
+            url={DFS}
             zMeshPos={9}
             yMeshPos={6}
             xMeshPos={2}
