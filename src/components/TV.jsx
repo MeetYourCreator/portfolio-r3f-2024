@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import * as THREE from 'three';
 import { useGLTF, Html } from '@react-three/drei';
+import TVCaption from './TVCaption';
 
 export const TV = ({
   url,
@@ -10,7 +11,7 @@ export const TV = ({
   yMeshPos,
   zMeshPos,
   props,
-  tvCaption
+  captionText
 }) => {
 
   const tvMeshRef = useRef();
@@ -81,27 +82,7 @@ export const TV = ({
         transform
       >
         {isActive && (
-          <section style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            // border: 'black 3px solid'
-          }}>
-            <p style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              fontSize: '.75rem',
-              letterSpacing: 1.5,
-              lineHeight: 1.5,
-              textAlign: 'left',
-              color: 'white',
-              marginRight: '90px',
-              marginLeft: '90px'
-            }}>
-              {tvCaption}
-            </p>
-          </section>
+          <TVCaption tvCaption={captionText} />
         )}
       </Html>
       {/* <mesh

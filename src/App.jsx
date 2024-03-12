@@ -20,12 +20,15 @@ import './styles.css';
 
 extend({ OutlinePass });
 
+
 export const App = () => {
+  const [wheelPos, setWheelPos] = useState(25);
   return (
     <main>
       <Canvas
         style={{ width: '100%', height: '100vh' }}
-        camera={{ position: [0, 0, 25] }} onWheel={e => console.log('delaX, deltaY, deltaZ', e.deltaX, e.deltaY, e.deltaZ)}
+        camera={{ position: [0, 0, wheelPos] }}
+        onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
           {/* <ScrollControls>
@@ -38,7 +41,7 @@ export const App = () => {
             xMeshPos={2}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            tvCaption={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams "}
+            captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams "}
 
           />
           <TV
@@ -49,7 +52,7 @@ export const App = () => {
             xMeshPos={1}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            tvCaption={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications"}
+            captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications"}
           />
           <TV
             src='tvPlane.gltf'
@@ -59,7 +62,7 @@ export const App = () => {
             xMeshPos={3}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            tvCaption={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs"}
+            captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs"}
           />
           <TV
             src='tvPlane.gltf'
@@ -69,7 +72,7 @@ export const App = () => {
             xMeshPos={4}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            tvCaption={''}
+            captionText={''}
           />
           <TV
             src='tvPlane.gltf'
@@ -79,7 +82,7 @@ export const App = () => {
             xMeshPos={5}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            tvCaption={'Redesigned customer-facing website for LGBTQ+ homeless center in NYC'}
+            captionText={'Redesigned customer-facing website for LGBTQ+ homeless center in NYC'}
           />
           <TV
             src='tvPlane.gltf'
@@ -89,7 +92,7 @@ export const App = () => {
             xMeshPos={6}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            tvCaption={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform '}
+            captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform '}
           />
           {/* </Scroll>
           </ScrollControls> */}
