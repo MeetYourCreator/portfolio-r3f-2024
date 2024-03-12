@@ -4,7 +4,7 @@ import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
 
 import Floor from './components/Floor';
-import TV from './components/TV';
+import TVScreen from './components/TVScreen';
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import JNJ from './assets/jnjvision.mp4';
@@ -33,7 +33,7 @@ export const App = () => {
         <Suspense fallback={null}>
           {/* <ScrollControls>
           <Scroll> */}
-          <TV
+          <TVScreen
             src='tvPlane.gltf'
             url={DFS}
             zMeshPos={9}
@@ -44,7 +44,7 @@ export const App = () => {
             captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams "}
 
           />
-          <TV
+          <TVScreen
             src='tvPlane.gltf'
             url={CC92MB}
             zMeshPos={11}
@@ -54,7 +54,7 @@ export const App = () => {
             yPlaneGeometry={1.5}
             captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications"}
           />
-          <TV
+          <TVScreen
             src='tvPlane.gltf'
             url={JNJ}
             zMeshPos={7}
@@ -64,7 +64,7 @@ export const App = () => {
             yPlaneGeometry={1.5}
             captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs"}
           />
-          <TV
+          <TVScreen
             src='tvPlane.gltf'
             url={SAMSHA}
             zMeshPos={5}
@@ -74,7 +74,7 @@ export const App = () => {
             yPlaneGeometry={1.5}
             captionText={''}
           />
-          <TV
+          <TVScreen
             src='tvPlane.gltf'
             url={NA}
             zMeshPos={3}
@@ -84,7 +84,7 @@ export const App = () => {
             yPlaneGeometry={1.5}
             captionText={'Redesigned customer-facing website for LGBTQ+ homeless center in NYC'}
           />
-          <TV
+          <TVScreen
             src='tvPlane.gltf'
             url={TABOOLA}
             zMeshPos={1}

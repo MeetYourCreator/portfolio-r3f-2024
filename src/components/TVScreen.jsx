@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { useGLTF, Html } from '@react-three/drei';
 import TVCaption from './TVCaption';
 
-export const TV = ({
+export const TVScreen = ({
   url,
   xPlaneGeometry,
   yPlaneGeometry,
@@ -106,4 +106,4 @@ export const TV = ({
 
 };
 
-export default TV;
+export default TVScreen;
