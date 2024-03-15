@@ -3,8 +3,9 @@ import { Canvas, extend, useThree } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
 
-import Floor from './components/Floor';
 import TVScreen from './components/TVScreen';
+import Floor from './components/Floor';
+
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import JNJ from './assets/jnjvision.mp4';
@@ -13,6 +14,7 @@ import NA from './assets/new-alternatives.mp4';
 import TABOOLA from './assets/taboola.mp4';
 
 import './styles.css';
+
 // export const UseThreeSize = () => {
 //   const size = useThree();
 //   console.log(size);
@@ -82,7 +84,7 @@ export const App = () => {
             xMeshPos={5}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            captionText={'Redesigned customer-facing website for LGBTQ+ homeless center in NYC'}
+            captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC'}
           />
           <TVScreen
             src='tvPlane.gltf'

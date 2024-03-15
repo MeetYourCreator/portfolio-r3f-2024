@@ -5,22 +5,19 @@ const TVCaption = ({ tvCaption }) => {
   return (
     <>
       <section style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        marginTop: '10%',
+        marginRight: '25%',
+        marginLeft: '25%',
         // border: 'black 3px solid'
       }}>
         <p style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '.75rem',
-          letterSpacing: 1.5,
+          fontSize: '.9rem',
+          // letterSpacing: 1.5,
           lineHeight: 1.5,
-          textAlign: 'left',
+          textAlign: 'justify',
+          textJustify: 'inter-word',
           color: 'white',
-          marginRight: '90px',
-          marginLeft: '90px'
+
         }}>
           {tvCaption}
         </p>
