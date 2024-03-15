@@ -3,6 +3,7 @@ import { Canvas, extend, useThree } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
 
+import AnimatedStars from './components/AnimatedStars';
 import TVScreen from './components/TVScreen';
 import Floor from './components/Floor';
 
@@ -116,7 +117,7 @@ export const App = () => {
         // minPolarAngle={Math.PI / 2}
         />
         <Floor />
-
+        <AnimatedStars />
         <Effects>
           {/* <outlinePass attachArray='passes'/> */}
         </Effects>
