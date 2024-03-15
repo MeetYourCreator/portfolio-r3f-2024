@@ -101,7 +101,7 @@ export const App = () => {
         </Suspense>
         <fog
           attach='fog'
-          args={["white", 1, 80]}
+          args={["#131216", 1, 35]}
         />
         <directionalLight
           intensity={1}
