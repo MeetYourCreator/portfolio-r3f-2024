@@ -16,7 +16,6 @@ export const TVScreen = ({
 
   const tvMeshRef = useRef();
   const textSectionRef = useRef();
-  // const textCardMeshRef = useRef()
 
   const [isHover, setIsHover] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -36,7 +35,6 @@ export const TVScreen = ({
     e.stopPropagation();
     setIsActive(!isActive);
   };
-
 
   console.log(tvMeshRef.current);
   return (
@@ -85,21 +83,6 @@ export const TVScreen = ({
           <TVCaption tvCaption={captionText} />
         )}
       </Html>
-      {/* <mesh
-         ref={textCardMeshRef}
-         scale={isActive ? 2 : null}
-         rotation={[0, 0, 0]}
-         position={isActive ? [0, 4.871, 14 ] : null}
-        >
-          <planeGeometry
-            args={[3.7, 2]}
-          />
-          <meshStandardMaterial
-            emissive="yellow"
-            side={THREE.DoubleSide}
-          >
-          </meshStandardMaterial>
-        </mesh> */}
     </group>
 
   );

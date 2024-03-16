@@ -1,12 +1,13 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, useRef } from 'react';
 import { Canvas, extend, useThree } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
-import { OrbitControls, Effects, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
+import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
 
 import AnimatedStars from './components/ui/AnimatedStars';
 import CameraPosLogging from './components/helpers/CameraPosLogging';
 import TVScreen from './components/ui/TVScreen';
 import Floor from './components/ui/Floor';
+import Contact from './components/ui/Contact';
 
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
@@ -27,6 +28,7 @@ extend({ OutlinePass });
 
 export const App = () => {
   const [wheelPos, setWheelPos] = useState(25);
+  const contactRef = useRef();
   return (
     <main>
       <Canvas
@@ -39,6 +41,14 @@ export const App = () => {
         }}
         onWheel={e => setWheelPos(e.deltaZ)}
       >
+        <Html
+          ref={contactRef}
+          as='section'
+          position={[.4, 7, 14]}
+          transform
+        >
+          <Contact contactText={'Projects'} />
+        </Html>
         <Suspense fallback={null}>
           {/* <ScrollControls>
           <Scroll> */}

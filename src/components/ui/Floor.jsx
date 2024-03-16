@@ -15,4 +15,4 @@ const Floor = () => {
   );
 };
 
-export default Floor; 
+export default Floor;
