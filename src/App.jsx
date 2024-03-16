@@ -3,9 +3,10 @@ import { Canvas, extend, useThree } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
 
-import AnimatedStars from './components/AnimatedStars';
-import TVScreen from './components/TVScreen';
-import Floor from './components/Floor';
+import AnimatedStars from './components/ui/AnimatedStars';
+import CameraPosLogging from './components/helpers/CameraPosLogging';
+import TVScreen from './components/ui/TVScreen';
+import Floor from './components/ui/Floor';
 
 import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
@@ -30,7 +31,12 @@ export const App = () => {
     <main>
       <Canvas
         style={{ width: '100%', height: '100vh' }}
-        camera={{ position: [0, 0, wheelPos] }}
+        camera={{
+          fov: 75,
+          near: 0.1,
+          far: 1000,
+          position: [0, 0, wheelPos]
+        }}
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
@@ -44,7 +50,7 @@ export const App = () => {
             xMeshPos={2}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams "}
+            captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams."}
 
           />
           <TVScreen
@@ -55,7 +61,7 @@ export const App = () => {
             xMeshPos={1}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications"}
+            captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
           />
           <TVScreen
             src='tvPlane.gltf'
@@ -65,7 +71,7 @@ export const App = () => {
             xMeshPos={3}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs"}
+            captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
           />
           <TVScreen
             src='tvPlane.gltf'
@@ -85,7 +91,7 @@ export const App = () => {
             xMeshPos={5}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC'}
+            captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
           />
           <TVScreen
             src='tvPlane.gltf'
@@ -95,7 +101,7 @@ export const App = () => {
             xMeshPos={6}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
-            captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform '}
+            captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
           />
           {/* </Scroll>
           </ScrollControls> */}
@@ -118,6 +124,9 @@ export const App = () => {
         />
         <Floor />
         <AnimatedStars />
+        <CameraPosLogging
+          event='mousemove'
+        />
         <Effects>
           {/* <outlinePass attachArray='passes'/> */}
         </Effects>

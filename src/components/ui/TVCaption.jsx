@@ -11,14 +11,17 @@ const TVCaption = ({ tvCaption }) => {
         // border: 'black 3px solid'
       }}>
         <p style={{
+          fontFamily: 'Allerta',
           fontSize: '.9rem',
           // letterSpacing: 1.5,
           lineHeight: 1.5,
           textAlign: 'justify',
           textJustify: 'inter-word',
+          hyphens: 'auto',
           color: 'white',
+        }}
 
-        }}>
+        >
           {tvCaption}
         </p>
       </section>
