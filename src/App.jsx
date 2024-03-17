@@ -7,10 +7,10 @@ import AnimatedStars from './components/ui/AnimatedStars';
 import CameraPosLogging from './components/helpers/CameraPosLogging';
 import TVScreen from './components/ui/TVScreen';
 import Floor from './components/ui/Floor';
-import Contact from './components/ui/Contact';
+import Heading from './components/ui/Heading';
 
-import DFS from './assets/dfs-mrp.mp4';
 import CC92MB from './assets/coca-cola_92mb.mp4';
+import DFS from './assets/dfs-mrp.mp4';
 import JNJ from './assets/jnjvision.mp4';
 import SAMSHA from './assets/samsha.mp4';
 import NA from './assets/new-alternatives.mp4';
@@ -44,14 +44,31 @@ export const App = () => {
         <Html
           ref={contactRef}
           as='section'
-          position={[.4, 7, 14]}
+          position={[.0, 7.2, 14]}
           transform
         >
-          <Contact contactText={'Projects'} />
+          <Heading
+            paddingTop={'15%'}
+            paddingRight={'20%'}
+            paddingBottom={'15%'}
+            paddingLeft={'20%'}
+            border={'#7AF8FF 3px solid'}
+            backgroundColor={'#1b1b1c'}
+            contactText={'Projects'} />
         </Html>
         <Suspense fallback={null}>
           {/* <ScrollControls>
           <Scroll> */}
+          <TVScreen
+            src='tvPlane.gltf'
+            url={CC92MB}
+            zMeshPos={11}
+            yMeshPos={7}
+            xMeshPos={1}
+            xPlaneGeometry={3}
+            yPlaneGeometry={1.5}
+            captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
+          />
           <TVScreen
             src='tvPlane.gltf'
             url={DFS}
@@ -65,16 +82,6 @@ export const App = () => {
           />
           <TVScreen
             src='tvPlane.gltf'
-            url={CC92MB}
-            zMeshPos={11}
-            yMeshPos={7}
-            xMeshPos={1}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
-          />
-          <TVScreen
-            src='tvPlane.gltf'
             url={JNJ}
             zMeshPos={7}
             yMeshPos={5}
@@ -83,6 +90,7 @@ export const App = () => {
             yPlaneGeometry={1.5}
             captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
           />
+
           <TVScreen
             src='tvPlane.gltf'
             url={SAMSHA}
