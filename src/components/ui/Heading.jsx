@@ -1,7 +1,7 @@
 import React from 'react';
 import { Html, Text } from '@react-three/drei';
 
-const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, backgroundColor }) => {
+const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, borderRadius, backgroundColor }) => {
 
     return (
         <>
@@ -12,6 +12,7 @@ const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, padding
                 paddingBottom: paddingBottom,
                 paddingLeft: paddingLeft,
                 border: border,
+                borderRadius: borderRadius,
                 backgroundColor: backgroundColor
             }}>
                 <p style={{

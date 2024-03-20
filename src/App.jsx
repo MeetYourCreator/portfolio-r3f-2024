@@ -1,13 +1,17 @@
 import React, { Suspense, useState, useRef } from 'react';
-import { Canvas, extend, useThree } from '@react-three/fiber';
+import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
+import * as THREE from 'three';
+import * as TWEEN from '@tweenjs/tween.js';
 
 import AnimatedStars from './components/ui/AnimatedStars';
 import CameraPosLogging from './components/helpers/CameraPosLogging';
-import TVScreen from './components/ui/TVScreen';
+import TVScreen from './components/ui/TV/TVScreen';
 import Floor from './components/ui/Floor';
 import Heading from './components/ui/Heading';
+import Pole from './components/ui/Pole';
+import Image from './components/ui/Image';
 
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import DFS from './assets/dfs-mrp.mp4';
@@ -16,19 +20,33 @@ import SAMSHA from './assets/samsha.mp4';
 import NA from './assets/new-alternatives.mp4';
 import TABOOLA from './assets/taboola.mp4';
 
-import './styles.css';
+import DFSREC_BL from './assets/images/ben-lane-dfs.png';
 
-// export const UseThreeSize = () => {
-//   const size = useThree();
-//   console.log(size);
-// };
+import './styles.css';
 
 extend({ OutlinePass });
 
-
 export const App = () => {
+
+
   const [wheelPos, setWheelPos] = useState(25);
   const contactRef = useRef();
+
+  // //code from tweenJS updates
+  // const [cameralPos, setCameraPos] = useState(
+  //   new THREE.Vector3(0, 0, 25)
+  // );
+  // const [cameraTargetPos, setCameraPosTarget] = useState(
+  //   new THREE.Vector3(0, 0, 0)
+  // );
+  // useFrame(({ camera }) => {
+
+  //   new TWEEN.Tween(cameralPos)
+  //     .to(cameraTargetPos, 1000)
+  //     .easing(TWEEN.Easing.Quadratic.Out)
+  //     .onUpdate(() => setCameraPos(cameralPos));
+  // });
+
   return (
     <main>
       <Canvas
@@ -41,10 +59,44 @@ export const App = () => {
         }}
         onWheel={e => setWheelPos(e.deltaZ)}
       >
+        <Suspense fallback={null}>
+          <Pole
+            color='#c90076'
+            posX={1}
+            posY={-5}
+            posZ={0}
+          />
+          <Image
+            img={DFSREC_BL}
+            imgWidth={4}
+            imgLength={2}
+            posX={2}
+            posY={2}
+            posZ={.1}
+          />
+          <Pole
+            color='yellow'
+            posX={3}
+            posY={-5}
+            posZ={0}
+          />
+          <Pole
+            color='green'
+            posX={0}
+            posY={-5}
+            posZ={4}
+          />
+          <Pole
+            color='orange'
+            posX={-2}
+            posY={-5}
+            posZ={4}
+          />
+        </Suspense>
         <Html
           ref={contactRef}
           as='section'
-          position={[.0, 7.2, 14]}
+          position={[0, 7, 13]}
           transform
         >
           <Heading
@@ -53,6 +105,7 @@ export const App = () => {
             paddingBottom={'15%'}
             paddingLeft={'20%'}
             border={'#7AF8FF 3px solid'}
+            borderRadius={10}
             backgroundColor={'#1b1b1c'}
             contactText={'Projects'} />
         </Html>
@@ -62,7 +115,7 @@ export const App = () => {
           <TVScreen
             src='tvPlane.gltf'
             url={CC92MB}
-            zMeshPos={11}
+            zMeshPos={9.5}
             yMeshPos={7}
             xMeshPos={1}
             xPlaneGeometry={3}
@@ -72,7 +125,7 @@ export const App = () => {
           <TVScreen
             src='tvPlane.gltf'
             url={DFS}
-            zMeshPos={9}
+            zMeshPos={8.5}
             yMeshPos={6}
             xMeshPos={2}
             xPlaneGeometry={3}
@@ -90,7 +143,6 @@ export const App = () => {
             yPlaneGeometry={1.5}
             captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
           />
-
           <TVScreen
             src='tvPlane.gltf'
             url={SAMSHA}

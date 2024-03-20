@@ -20,7 +20,6 @@ const TVCaption = ({ tvCaption }) => {
           hyphens: 'auto',
           color: 'white',
         }}
-
         >
           {tvCaption}
         </p>
