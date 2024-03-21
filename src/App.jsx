@@ -21,6 +21,8 @@ import NA from './assets/new-alternatives.mp4';
 import TABOOLA from './assets/taboola.mp4';
 
 import DFSREC_BL from './assets/images/ben-lane-dfs.png';
+import JNJREC_DB from './assets/images/dalila-brosen-jnj.png';
+import DFSREC_BW from './assets/images/bradley-walker-dfs.png';
 
 import './styles.css';
 
@@ -60,38 +62,70 @@ export const App = () => {
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
+          {/* Z at -4 */}
           <Pole
-            color='#c90076'
-            posX={1}
+            posZ={-4}
+            posX={2}
             posY={-5}
-            posZ={0}
+            color='yellow'
           />
           <Image
+            posZ={-3.9}
+            posX={3}
+            posY={2}
             img={DFSREC_BL}
             imgWidth={4}
             imgLength={2}
-            posX={2}
-            posY={2}
-            posZ={.1}
           />
           <Pole
+            posZ={-4}
+            posX={4}
+            posY={-5}
             color='yellow'
-            posX={3}
-            posY={-5}
-            posZ={0}
           />
+          {/* Z at -2 */}
           <Pole
+            posZ={-2}
+            posX={1}
+            posY={-5}
             color='green'
+          />
+          <Image
+            posZ={-1.9}
             posX={0}
-            posY={-5}
-            posZ={4}
+            posY={2}
+            img={DFSREC_BW}
+            imgWidth={4}
+            imgLength={2}
           />
           <Pole
-            color='orange'
+            posZ={-2}
+            posX={-1}
+            posY={-5}
+            color='green'
+          />
+          {/* Z at 0 */}
+          <Pole
+            posZ={0}
             posX={-2}
             posY={-5}
-            posZ={4}
+            color='red'
           />
+          <Image
+            posZ={.1}
+            posX={-3}
+            posY={2}
+            img={JNJREC_DB}
+            imgWidth={4}
+            imgLength={2}
+          />
+          <Pole
+            posZ={0}
+            posX={-4}
+            posY={-5}
+            color='red'
+          />
+
         </Suspense>
         <Html
           ref={contactRef}
