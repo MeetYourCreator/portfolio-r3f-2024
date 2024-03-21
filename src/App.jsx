@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useRef } from 'react';
-import { Canvas, extend, useFrame } from '@react-three/fiber';
+import { Canvas, extend } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
 import * as THREE from 'three';
@@ -33,7 +33,6 @@ export const App = () => {
 
   const [wheelPos, setWheelPos] = useState(25);
   const contactRef = useRef();
-
   // //code from tweenJS updates
   // const [cameralPos, setCameraPos] = useState(
   //   new THREE.Vector3(0, 0, 25)
