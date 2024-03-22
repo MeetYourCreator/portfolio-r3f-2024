@@ -1,7 +1,6 @@
 import React from 'react';
-import { Html, Text } from '@react-three/drei';
 
-const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, borderRadius, backgroundColor }) => {
+const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, borderRadius, backgroundColor, fontFamily, fontSize, fontVariant, letterSpacing, color, mixBlendMode }) => {
 
     return (
         <>
@@ -16,12 +15,12 @@ const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, padding
                 backgroundColor: backgroundColor
             }}>
                 <p style={{
-                    fontFamily: 'Raleway Dots',
-                    fontSize: '1rem',
-                    fontVariant: 'small-caps',
-                    letterSpacing: '.15rem',
-                    color: 'gold',
-                    mixBlendMode: 'screen',
+                    fontFamily: fontFamily,
+                    fontSize: fontSize,
+                    fontVariant: fontVariant,
+                    letterSpacing: letterSpacing,
+                    color: color,
+                    mixBlendMode: mixBlendMode,
                 }}
                 >
                     {contactText}

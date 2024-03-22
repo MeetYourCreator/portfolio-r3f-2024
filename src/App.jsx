@@ -10,8 +10,8 @@ import CameraPosLogging from './components/helpers/CameraPosLogging';
 import TVScreen from './components/ui/TV/TVScreen';
 import Floor from './components/ui/Floor';
 import Heading from './components/ui/Heading';
-import Pole from './components/ui/Pole';
-import Image from './components/ui/Image';
+import Pole from './components/ui/Billboard/Pole';
+import Image from './components/ui/Billboard/Image';
 
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import DFS from './assets/dfs-mrp.mp4';
@@ -32,7 +32,8 @@ export const App = () => {
 
 
   const [wheelPos, setWheelPos] = useState(25);
-  const contactRef = useRef();
+  const projectsHeadingRef = useRef();
+  const testimonialsHeadingRef = useRef();
   // //code from tweenJS updates
   // const [cameralPos, setCameraPos] = useState(
   //   new THREE.Vector3(0, 0, 25)
@@ -124,23 +125,71 @@ export const App = () => {
             posY={-5}
             color='red'
           />
+          {/* Heading Billboard
+              Z at 2 */}
+          <Pole
+            posZ={2}
+            posX={-5}
+            posY={-5}
+            color='blue'
+          />
+          <Html
+            ref={testimonialsHeadingRef}
+            as='section'
+            position={[-6.3, 2, 2]}
+            transform
+          >
+            <Heading
+              contactText={'Testimonials'}
+              paddingTop={'10%'}
+              paddingRight={'10%'}
+              paddingBottom={'10%'}
+              paddingLeft={'10%'}
+              border={'1px solid rgb(79,48,48)'}
+              borderRadius={10}
+              backgroundColor={'rgb(84,73,63'}
+              fontFamily='Aerial'
+            />
+          </Html>
+          <Image
+            posZ={.1}
+            posX={-3}
+            posY={2}
+            img={JNJREC_DB}
+            imgWidth={4}
+            imgLength={2}
+          />
+          <Pole
+            posZ={2}
+            posX={-7}
+            posY={-5}
+            color='blue'
+          />
 
         </Suspense>
+
         <Html
-          ref={contactRef}
+          ref={projectsHeadingRef}
           as='section'
           position={[0, 7, 13]}
           transform
         >
           <Heading
-            paddingTop={'15%'}
-            paddingRight={'20%'}
-            paddingBottom={'15%'}
-            paddingLeft={'20%'}
-            border={'#7AF8FF 3px solid'}
+            contactText='Projects'
+            paddingTop='15%'
+            paddingRight='20%'
+            paddingBottom='15%'
+            paddingLeft='20%'
+            border='#7AF8FF 3px solid'
             borderRadius={10}
-            backgroundColor={'#1b1b1c'}
-            contactText={'Projects'} />
+            backgroundColor='#1b1b1c'
+            fontFamily='Raleway Dots'
+            fontSize='1rem'
+            fontVariant='small-caps'
+            letterSpacing='.15rem'
+            color='gold'
+            mixBlendMode='screen'
+          />
         </Html>
         <Suspense fallback={null}>
           {/* <ScrollControls>
