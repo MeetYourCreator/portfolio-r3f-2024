@@ -129,36 +129,40 @@ export const App = () => {
               Z at 2 */}
           <Pole
             posZ={2}
-            posX={-5}
+            posX={-4.5}
             posY={-5}
             color='blue'
           />
           <Html
             ref={testimonialsHeadingRef}
             as='section'
-            position={[-6.3, 2, 2]}
+            position={[-6, 2, 2]}
             transform
           >
             <Heading
               contactText={'Testimonials'}
-              paddingTop={'10%'}
-              paddingRight={'10%'}
-              paddingBottom={'10%'}
-              paddingLeft={'10%'}
+              paddingTop={'5%'}
+              paddingRight={'5%'}
+              paddingBottom={'5%'}
+              paddingLeft={'5%'}
               border={'1px solid rgb(79,48,48)'}
               borderRadius={10}
               backgroundColor={'rgb(84,73,63'}
-              fontFamily='Aerial'
+              fontFamily='Nosifer'
+              fontSize={'20px'}
+              // fontWeight={900}
+              fontVariant='small-caps'
+              color='red'
             />
           </Html>
-          <Image
+          {/* <Image
             posZ={.1}
             posX={-3}
             posY={2}
             img={JNJREC_DB}
             imgWidth={4}
             imgLength={2}
-          />
+          /> */}
           <Pole
             posZ={2}
             posX={-7}

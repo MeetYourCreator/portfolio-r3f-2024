@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, borderRadius, backgroundColor, fontFamily, fontSize, fontVariant, letterSpacing, color, mixBlendMode }) => {
+const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, borderRadius, backgroundColor, fontFamily, fontSize, fontWeight, fontVariant, letterSpacing, color, mixBlendMode }) => {
 
     return (
         <>
@@ -17,6 +17,7 @@ const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, padding
                 <p style={{
                     fontFamily: fontFamily,
                     fontSize: fontSize,
+                    fontWeight: fontWeight,
                     fontVariant: fontVariant,
                     letterSpacing: letterSpacing,
                     color: color,
