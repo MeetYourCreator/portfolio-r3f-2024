@@ -20,9 +20,10 @@ import SAMSHA from './assets/samsha.mp4';
 import NA from './assets/new-alternatives.mp4';
 import TABOOLA from './assets/taboola.mp4';
 
-import DFSREC_BL from './assets/images/ben-lane-dfs.png';
-import JNJREC_DB from './assets/images/dalila-brosen-jnj.png';
-import DFSREC_BW from './assets/images/bradley-walker-dfs.png';
+import TESTIMONIALS from './assets/images/testimonials-heading_border.png';
+import DFSREC_BL from './assets/images/ben-lane-dfs_border.png';
+import JNJREC_DB from './assets/images/dalila-brosen-jnj_border.png';
+import DFSREC_BW from './assets/images/bradley-walker-dfs_border.png';
 
 import './styles.css';
 
@@ -133,7 +134,7 @@ export const App = () => {
             posY={-5}
             color='blue'
           />
-          <Html
+          {/* <Html
             ref={testimonialsHeadingRef}
             as='section'
             position={[-6, 2, 2]}
@@ -154,15 +155,15 @@ export const App = () => {
               fontVariant='small-caps'
               color='red'
             />
-          </Html>
-          {/* <Image
-            posZ={.1}
-            posX={-3}
+          </Html> */}
+          <Image
+            posZ={2.1}
+            posX={-5.8}
             posY={2}
-            img={JNJREC_DB}
+            img={TESTIMONIALS}
             imgWidth={4}
             imgLength={2}
-          /> */}
+          />
           <Pole
             posZ={2}
             posX={-7}
