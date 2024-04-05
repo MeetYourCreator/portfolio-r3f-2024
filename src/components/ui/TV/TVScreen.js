@@ -20,7 +20,7 @@ export const TVScreen = ({
   const [isHover, setIsHover] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
-  const { nodes } = useGLTF('tvPlane.gltf');
+  const { nodes } = useGLTF('models/tvPlane.gltf');
   const [video] = useState(() => {
     const vid = document.createElement('video');
     vid.src = url;

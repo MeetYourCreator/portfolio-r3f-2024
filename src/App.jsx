@@ -134,28 +134,6 @@ export const App = () => {
             posY={-5}
             color='blue'
           />
-          {/* <Html
-            ref={testimonialsHeadingRef}
-            as='section'
-            position={[-6, 2, 2]}
-            transform
-          >
-            <Heading
-              contactText={'Testimonials'}
-              paddingTop={'5%'}
-              paddingRight={'5%'}
-              paddingBottom={'5%'}
-              paddingLeft={'5%'}
-              border={'1px solid rgb(79,48,48)'}
-              borderRadius={10}
-              backgroundColor={'rgb(84,73,63'}
-              fontFamily='Nosifer'
-              fontSize={'20px'}
-              // fontWeight={900}
-              fontVariant='small-caps'
-              color='red'
-            />
-          </Html> */}
           <Image
             posZ={2.1}
             posX={-5.8}
@@ -170,7 +148,6 @@ export const App = () => {
             posY={-5}
             color='blue'
           />
-
         </Suspense>
 
         <Html
