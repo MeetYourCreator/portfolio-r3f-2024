@@ -13,6 +13,8 @@ import Heading from './components/ui/Heading';
 import Pole from './components/ui/Billboard/Pole';
 import Image from './components/ui/Billboard/Image';
 
+import CementPole from './components/ui/Billboard/CementPole';
+
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import DFS from './assets/dfs-mrp.mp4';
 import JNJ from './assets/jnjvision.mp4';
@@ -34,8 +36,6 @@ export const App = () => {
 
   const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
-  const testimonialsHeadingRef = useRef();
-  // //code from tweenJS updates
   // const [cameralPos, setCameraPos] = useState(
   //   new THREE.Vector3(0, 0, 25)
   // );
@@ -63,6 +63,7 @@ export const App = () => {
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
+          {/* <CementPole /> */}
           {/* Z at -4 */}
           <Pole
             posZ={-4}

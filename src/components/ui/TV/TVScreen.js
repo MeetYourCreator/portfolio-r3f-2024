@@ -16,11 +16,13 @@ export const TVScreen = ({
 
   const tvMeshRef = useRef();
   const textSectionRef = useRef();
+  const { nodes } = useGLTF('models/tvPlane.gltf');
 
   const [isHover, setIsHover] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
-  const { nodes } = useGLTF('models/tvPlane.gltf');
+
+
   const [video] = useState(() => {
     const vid = document.createElement('video');
     vid.src = url;
@@ -36,7 +38,10 @@ export const TVScreen = ({
     setIsActive(!isActive);
   };
 
-  console.log(tvMeshRef.current);
+  // console.log(tvMeshRef.current);
+
+
+
   return (
 
     <group rotation={[Math.PI / 1, Math.PI / 1, Math.PI / 1]}>
