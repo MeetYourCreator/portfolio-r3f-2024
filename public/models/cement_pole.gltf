@@ -15,25 +15,39 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"cement_pole"
+			"name":"cement_pole",
+			"rotation":[
+				0,
+				0,
+				-1,
+				0
+			],
+			"scale":[
+				-1.2400000095367432,
+				-1.9600000381469727,
+				-1.8999998569488525
+			]
 		}
 	],
 	"materials":[
 		{
-			"name":"cement_pole.001",
-			"normalTexture":{
-				"index":0
-			},
+			"doubleSided":true,
+			"name":"Material",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":1
-				}
+				"baseColorFactor":[
+					0.13563193380832672,
+					0.15582337975502014,
+					0.18141387403011322,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.39000004529953003
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cemenet_Pole",
+			"name":"Cement_Pole",
 			"primitives":[
 				{
 					"attributes":{
@@ -45,28 +59,6 @@
 					"material":0
 				}
 			]
-		}
-	],
-	"textures":[
-		{
-			"sampler":0,
-			"source":0
-		},
-		{
-			"sampler":0,
-			"source":1
-		}
-	],
-	"images":[
-		{
-			"mimeType":"image/png",
-			"name":"ceramic_vase_03_nor_gl",
-			"uri":"ceramic_vase_03_nor_gl.png"
-		},
-		{
-			"mimeType":"image/jpeg",
-			"name":"ceramic_vase_03_diff_1k",
-			"uri":"ceramic_vase_03_diff_1k.jpg"
 		}
 	],
 	"accessors":[
@@ -129,12 +121,6 @@
 			"byteLength":16704,
 			"byteOffset":70272,
 			"target":34963
-		}
-	],
-	"samplers":[
-		{
-			"magFilter":9729,
-			"minFilter":9987
 		}
 	],
 	"buffers":[

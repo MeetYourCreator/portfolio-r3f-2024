@@ -5,7 +5,7 @@ const Pole = ({ color, posX, posY, posZ }) => {
 
   const texture = useLoader(THREE.TextureLoader, '../../../textures/weathered_planks_diff_1k.jpg');
 
-  console.log(texture);
+  // console.log(texture);
   return (
     <>
       <mesh

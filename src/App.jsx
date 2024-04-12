@@ -63,14 +63,8 @@ export const App = () => {
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
-          {/* <CementPole /> */}
-          {/* Z at -4 */}
-          <Pole
-            posZ={-4}
-            posX={2}
-            posY={-5}
-            color='yellow'
-          />
+
+          {/* Z at -.1 */}
           <Image
             posZ={-3.9}
             posX={3}
@@ -79,19 +73,13 @@ export const App = () => {
             imgWidth={4}
             imgLength={2}
           />
-          <Pole
-            posZ={-4}
-            posX={4}
-            posY={-5}
-            color='yellow'
+          <CementPole
+            posZ={-4.1}
+            posX={3}
+            posY={-2}
           />
           {/* Z at -2 */}
-          <Pole
-            posZ={-2}
-            posX={1}
-            posY={-5}
-            color='green'
-          />
+
           <Image
             posZ={-1.9}
             posX={0}
@@ -100,19 +88,13 @@ export const App = () => {
             imgWidth={4}
             imgLength={2}
           />
-          <Pole
-            posZ={-2}
-            posX={-1}
-            posY={-5}
-            color='green'
+          <CementPole
+            posZ={-2.1}
+            posX={0}
+            posY={-2}
           />
-          {/* Z at 0 */}
-          <Pole
-            posZ={0}
-            posX={-2}
-            posY={-5}
-            color='red'
-          />
+
+          {/* Z at -.1 */}
           <Image
             posZ={.1}
             posX={-3}
@@ -121,20 +103,13 @@ export const App = () => {
             imgWidth={4}
             imgLength={2}
           />
-          <Pole
-            posZ={0}
-            posX={-4}
-            posY={-5}
-            color='red'
+          <CementPole
+            posZ={-.1}
+            posX={-3}
+            posY={-2}
           />
           {/* Heading Billboard
               Z at 2 */}
-          <Pole
-            posZ={2}
-            posX={-4.5}
-            posY={-5}
-            color='blue'
-          />
           <Image
             posZ={2.1}
             posX={-5.8}
@@ -143,11 +118,10 @@ export const App = () => {
             imgWidth={4}
             imgLength={2}
           />
-          <Pole
-            posZ={2}
-            posX={-7}
-            posY={-5}
-            color='blue'
+          <CementPole
+            posZ={1.9}
+            posX={-6}
+            posY={-2}
           />
         </Suspense>
 
@@ -241,10 +215,10 @@ export const App = () => {
           {/* </Scroll>
           </ScrollControls> */}
         </Suspense>
-        <fog
+        {/* <fog
           attach='fog'
           args={["#131216", 1, 35]}
-        />
+        /> */}
         <directionalLight
           intensity={1}
         />
