@@ -10,10 +10,8 @@ import CameraPosLogging from './components/helpers/CameraPosLogging';
 import TVScreen from './components/ui/TV/TVScreen';
 import Floor from './components/ui/Floor';
 import Heading from './components/ui/Heading';
-import Pole from './components/ui/Billboard/Pole';
-import Image from './components/ui/Billboard/Image';
-
 import CementPole from './components/ui/Billboard/CementPole';
+import Image from './components/ui/Billboard/Image';
 
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import DFS from './assets/dfs-mrp.mp4';
@@ -36,19 +34,6 @@ export const App = () => {
 
   const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
-  // const [cameralPos, setCameraPos] = useState(
-  //   new THREE.Vector3(0, 0, 25)
-  // );
-  // const [cameraTargetPos, setCameraPosTarget] = useState(
-  //   new THREE.Vector3(0, 0, 0)
-  // );
-  // useFrame(({ camera }) => {
-
-  //   new TWEEN.Tween(cameralPos)
-  //     .to(cameraTargetPos, 1000)
-  //     .easing(TWEEN.Easing.Quadratic.Out)
-  //     .onUpdate(() => setCameraPos(cameralPos));
-  // });
 
   return (
     <main>
@@ -63,8 +48,7 @@ export const App = () => {
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
-
-          {/* Z at -.1 */}
+          {/* Ben Lane */}
           <Image
             posZ={-3.9}
             posX={3}
@@ -78,8 +62,7 @@ export const App = () => {
             posX={3}
             posY={-2}
           />
-          {/* Z at -2 */}
-
+          {/* Bradley Walker */}
           <Image
             posZ={-1.9}
             posX={0}
@@ -93,8 +76,7 @@ export const App = () => {
             posX={0}
             posY={-2}
           />
-
-          {/* Z at -.1 */}
+          {/* Dalia Brosen */}
           <Image
             posZ={.1}
             posX={-3}
@@ -108,8 +90,7 @@ export const App = () => {
             posX={-3}
             posY={-2}
           />
-          {/* Heading Billboard
-              Z at 2 */}
+          {/* Testimonials Billboard */}
           <Image
             posZ={2.1}
             posX={-5.8}
@@ -128,7 +109,7 @@ export const App = () => {
         <Html
           ref={projectsHeadingRef}
           as='section'
-          position={[0, 7, 13]}
+          position={[0, 8, 13]}
           transform
         >
           <Heading
@@ -155,7 +136,7 @@ export const App = () => {
             src='tvPlane.gltf'
             url={CC92MB}
             zMeshPos={9.5}
-            yMeshPos={7}
+            yMeshPos={8.5}
             xMeshPos={1}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -165,7 +146,7 @@ export const App = () => {
             src='tvPlane.gltf'
             url={DFS}
             zMeshPos={8.5}
-            yMeshPos={6}
+            yMeshPos={7.5}
             xMeshPos={2}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -176,7 +157,7 @@ export const App = () => {
             src='tvPlane.gltf'
             url={JNJ}
             zMeshPos={7}
-            yMeshPos={5}
+            yMeshPos={6.5}
             xMeshPos={3}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -186,7 +167,7 @@ export const App = () => {
             src='tvPlane.gltf'
             url={SAMSHA}
             zMeshPos={5}
-            yMeshPos={4}
+            yMeshPos={5.5}
             xMeshPos={4}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -196,7 +177,7 @@ export const App = () => {
             src='tvPlane.gltf'
             url={NA}
             zMeshPos={3}
-            yMeshPos={3}
+            yMeshPos={4.5}
             xMeshPos={5}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -206,7 +187,7 @@ export const App = () => {
             src='tvPlane.gltf'
             url={TABOOLA}
             zMeshPos={1}
-            yMeshPos={2}
+            yMeshPos={3.5}
             xMeshPos={6}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -215,10 +196,10 @@ export const App = () => {
           {/* </Scroll>
           </ScrollControls> */}
         </Suspense>
-        {/* <fog
+        <fog
           attach='fog'
           args={["#131216", 1, 35]}
-        /> */}
+        />
         <directionalLight
           intensity={1}
         />
@@ -245,3 +226,7 @@ export const App = () => {
 };
 
 export default App;
+
+//TODO1: Create ModalOverlay component for isActive elements
+//TODO2: Reposition video components
+//TODO3: Add Contact Section with Github, Linkedin, and Email Links
