@@ -13,6 +13,8 @@ import Heading from './components/ui/Heading';
 import CementPole from './components/ui/Billboard/CementPole';
 import Image from './components/ui/Billboard/Image';
 
+import Modal from './components/ui/Modal';
+
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import DFS from './assets/dfs-mrp.mp4';
 import JNJ from './assets/jnjvision.mp4';
@@ -24,16 +26,20 @@ import TESTIMONIALS from './assets/images/testimonials-heading_border.png';
 import DFSREC_BL from './assets/images/ben-lane-dfs_border.png';
 import JNJREC_DB from './assets/images/dalila-brosen-jnj_border.png';
 import DFSREC_BW from './assets/images/bradley-walker-dfs_border.png';
-
+import CTSREC_BF from './assets/images/brian_fowler_cts.png';
 import './styles.css';
 
 extend({ OutlinePass });
 
 export const App = () => {
 
-
+  const [isActive, setIsActive] = useState(false);
   const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
 
   return (
     <main>
@@ -48,6 +54,21 @@ export const App = () => {
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <Suspense fallback={null}>
+          {/* Ben Lane */}
+          <Image
+            posZ={-3.9}
+            posX={3}
+            posY={2}
+            img={DFSREC_BL}
+            imgWidth={4}
+            imgLength={2}
+          />
+          <CementPole
+            posZ={-4.1}
+            posX={3}
+            posY={-2}
+          />
+
           {/* Ben Lane */}
           <Image
             posZ={-3.9}
@@ -109,7 +130,7 @@ export const App = () => {
         <Html
           ref={projectsHeadingRef}
           as='section'
-          position={[0, 8, 13]}
+          position={[0, 8.3, 13]}
           transform
         >
           <Heading
@@ -133,20 +154,22 @@ export const App = () => {
           {/* <ScrollControls>
           <Scroll> */}
           <TVScreen
+            onClick={handleClick}
             src='tvPlane.gltf'
             url={CC92MB}
             zMeshPos={9.5}
-            yMeshPos={8.5}
+            yMeshPos={8.7}
             xMeshPos={1}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
             captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
           />
           <TVScreen
+            onClick={handleClick}
             src='tvPlane.gltf'
             url={DFS}
             zMeshPos={8.5}
-            yMeshPos={7.5}
+            yMeshPos={7.7}
             xMeshPos={2}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
@@ -154,48 +177,54 @@ export const App = () => {
 
           />
           <TVScreen
+            onClick={handleClick}
             src='tvPlane.gltf'
             url={JNJ}
             zMeshPos={7}
-            yMeshPos={6.5}
+            yMeshPos={6.7}
             xMeshPos={3}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
             captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
           />
           <TVScreen
+            onClick={handleClick}
             src='tvPlane.gltf'
             url={SAMSHA}
             zMeshPos={5}
-            yMeshPos={5.5}
+            yMeshPos={5.7}
             xMeshPos={4}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
             captionText={''}
           />
           <TVScreen
+            onClick={handleClick}
             src='tvPlane.gltf'
             url={NA}
             zMeshPos={3}
-            yMeshPos={4.5}
+            yMeshPos={4.7}
             xMeshPos={5}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
             captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
           />
           <TVScreen
+            onClick={handleClick}
             src='tvPlane.gltf'
             url={TABOOLA}
             zMeshPos={1}
-            yMeshPos={3.5}
+            yMeshPos={3.7}
             xMeshPos={6}
             xPlaneGeometry={3}
             yPlaneGeometry={1.5}
             captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
           />
+
           {/* </Scroll>
           </ScrollControls> */}
         </Suspense>
+        {isActive && (<Modal />)}
         <fog
           attach='fog'
           args={["#131216", 1, 35]}
@@ -220,6 +249,7 @@ export const App = () => {
         <Effects>
           {/* <outlinePass attachArray='passes'/> */}
         </Effects>
+
       </Canvas>
     </main>
   );

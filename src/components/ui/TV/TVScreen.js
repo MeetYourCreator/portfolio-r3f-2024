@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import * as THREE from 'three';
 import { useGLTF, Html } from '@react-three/drei';
 import TVCaption from './TVCaption';
+import Modal from '../Modal';
 
 export const TVScreen = ({
   url,
@@ -81,7 +82,10 @@ export const TVScreen = ({
         transform
       >
         {isActive && (
-          <TVCaption tvCaption={captionText} />
+          <>
+            <TVCaption tvCaption={captionText} />
+            <Modal />
+          </>
         )}
       </Html>
     </group>

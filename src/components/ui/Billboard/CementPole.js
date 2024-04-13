@@ -4,7 +4,6 @@ import { useGLTF, Html } from '@react-three/drei';
 
 
 const CementPole = ({
-  props,
   posX,
   posY,
   posZ
