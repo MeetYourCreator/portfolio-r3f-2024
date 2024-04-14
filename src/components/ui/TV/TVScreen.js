@@ -14,15 +14,11 @@ export const TVScreen = ({
   props,
   captionText
 }) => {
-
+  const [isHover, setIsHover] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const tvMeshRef = useRef();
   const textSectionRef = useRef();
   const { nodes } = useGLTF('models/tvPlane.gltf');
-
-  const [isHover, setIsHover] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-
-
 
   const [video] = useState(() => {
     const vid = document.createElement('video');
@@ -54,7 +50,7 @@ export const TVScreen = ({
         onPointerOut={(event) => setIsHover(false)}
         scale={isActive ? 2.5 : 1}
         rotation={[0, 0, 0]}
-        position={isActive ? [0, 1, 14] : [xMeshPos, yMeshPos, zMeshPos]}
+        position={isActive ? [0, 1, 15] : [xMeshPos, yMeshPos, zMeshPos]}
       >
         <planeGeometry
           args={[xPlaneGeometry, yPlaneGeometry]}
@@ -84,6 +80,15 @@ export const TVScreen = ({
         {isActive && (
           <>
             <TVCaption tvCaption={captionText} />
+          </>
+        )}
+      </Html>
+      <Html
+        position={isActive ? [0, 0, 13] : null}
+        transform
+      >
+        {isActive && (
+          <>
             <Modal />
           </>
         )}

@@ -224,7 +224,7 @@ export const App = () => {
           {/* </Scroll>
           </ScrollControls> */}
         </Suspense>
-        {isActive && (<Modal />)}
+        {/* {isActive && (<Modal />)} */}
         <fog
           attach='fog'
           args={["#131216", 1, 35]}

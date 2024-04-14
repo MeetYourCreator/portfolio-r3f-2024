@@ -13,12 +13,6 @@ const Modal = () => {
 
   return (
     <>
-      {/* <mesh
-        position={[0, 0, 0]}
-      >
-        <Html
-          ref={modalRef}
-        > */}
       <section
         className='modal'
       >
@@ -29,8 +23,6 @@ const Modal = () => {
           <h1>Hello</h1>
         </article>
       </section>
-      {/* </Html>
-      </mesh> */}
     </>
   );
 };
