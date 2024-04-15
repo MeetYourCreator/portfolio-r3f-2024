@@ -2,8 +2,6 @@ import React, { Suspense, useState, useRef } from 'react';
 import { Canvas, extend } from '@react-three/fiber';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
 import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
-import * as THREE from 'three';
-import * as TWEEN from '@tweenjs/tween.js';
 
 import AnimatedStars from './components/ui/AnimatedStars';
 import CameraPosLogging from './components/helpers/CameraPosLogging';
@@ -12,8 +10,6 @@ import Floor from './components/ui/Floor';
 import Heading from './components/ui/Heading';
 import CementPole from './components/ui/Billboard/CementPole';
 import Image from './components/ui/Billboard/Image';
-
-import Modal from './components/ui/Modal';
 
 import CC92MB from './assets/coca-cola_92mb.mp4';
 import DFS from './assets/dfs-mrp.mp4';

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import * as THREE from 'three';
 import { useGLTF, Html } from '@react-three/drei';
 import TVCaption from './TVCaption';
-import Modal from '../Modal';
 
 export const TVScreen = ({
   url,
@@ -83,20 +82,8 @@ export const TVScreen = ({
           </>
         )}
       </Html>
-      <Html
-        position={isActive ? [0, 0, 13] : null}
-        transform
-      >
-        {isActive && (
-          <>
-            <Modal />
-          </>
-        )}
-      </Html>
     </group>
-
   );
-
 };
 
 export default TVScreen;
