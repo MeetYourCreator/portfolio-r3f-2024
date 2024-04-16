@@ -1,7 +1,14 @@
 import React, { Suspense, useState, useRef } from 'react';
-import { Canvas, extend } from '@react-three/fiber';
-import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
+
+
+import { getProject } from '@theatre/core';
+import studio from '@theatre/studio';
+import extension from '@theatre/r3f/dist/extension';
+import { SheetProvider } from '@theatre/r3f';
+
+
 
 import AnimatedStars from './components/ui/AnimatedStars';
 import CameraPosLogging from './components/helpers/CameraPosLogging';
@@ -25,9 +32,14 @@ import DFSREC_BW from './assets/images/bradley-walker-dfs_border.png';
 import CTSREC_BF from './assets/images/brian_fowler_cts.png';
 import './styles.css';
 
-extend({ OutlinePass });
 
+const demoSheet = getProject('Demo Project').sheet('Demo Sheet');
+
+studio.initialize();
+studio.extend(extension);
 export const App = () => {
+
+
 
   const [isActive, setIsActive] = useState(false);
   const [wheelPos, setWheelPos] = useState(25);
@@ -49,203 +61,206 @@ export const App = () => {
         }}
         onWheel={e => setWheelPos(e.deltaZ)}
       >
-        <Suspense fallback={null}>
-          {/* Ben Lane */}
-          <Image
-            posZ={-3.9}
-            posX={3}
-            posY={2}
-            img={DFSREC_BL}
-            imgWidth={4}
-            imgLength={2}
-          />
-          <CementPole
-            posZ={-4.1}
-            posX={3}
-            posY={-2}
-          />
+        <SheetProvider sheet={demoSheet}>
 
-          {/* Ben Lane */}
-          <Image
-            posZ={-3.9}
-            posX={3}
-            posY={2}
-            img={DFSREC_BL}
-            imgWidth={4}
-            imgLength={2}
-          />
-          <CementPole
-            posZ={-4.1}
-            posX={3}
-            posY={-2}
-          />
-          {/* Bradley Walker */}
-          <Image
-            posZ={-1.9}
-            posX={0}
-            posY={2}
-            img={DFSREC_BW}
-            imgWidth={4}
-            imgLength={2}
-          />
-          <CementPole
-            posZ={-2.1}
-            posX={0}
-            posY={-2}
-          />
-          {/* Dalia Brosen */}
-          <Image
-            posZ={.1}
-            posX={-3}
-            posY={2}
-            img={JNJREC_DB}
-            imgWidth={4}
-            imgLength={2}
-          />
-          <CementPole
-            posZ={-.1}
-            posX={-3}
-            posY={-2}
-          />
-          {/* Testimonials Billboard */}
-          <Image
-            posZ={2.1}
-            posX={-5.8}
-            posY={2}
-            img={TESTIMONIALS}
-            imgWidth={4}
-            imgLength={2}
-          />
-          <CementPole
-            posZ={1.9}
-            posX={-6}
-            posY={-2}
-          />
-        </Suspense>
 
-        <Html
-          ref={projectsHeadingRef}
-          as='section'
-          position={[0, 8.3, 13]}
-          transform
-        >
-          <Heading
-            contactText='Projects'
-            paddingTop='15%'
-            paddingRight='20%'
-            paddingBottom='15%'
-            paddingLeft='20%'
-            border='#7AF8FF 3px solid'
-            borderRadius={10}
-            backgroundColor='#1b1b1c'
-            fontFamily='Raleway Dots'
-            fontSize='1rem'
-            fontVariant='small-caps'
-            letterSpacing='.15rem'
-            color='gold'
-            mixBlendMode='screen'
-          />
-        </Html>
-        <Suspense fallback={null}>
-          {/* <ScrollControls>
+          <Suspense fallback={null}>
+            {/* Ben Lane */}
+            <Image
+              posZ={-3.9}
+              posX={3}
+              posY={2}
+              img={DFSREC_BL}
+              imgWidth={4}
+              imgLength={2}
+            />
+            <CementPole
+              posZ={-4.1}
+              posX={3}
+              posY={-2}
+            />
+
+            {/* Ben Lane */}
+            <Image
+              posZ={-3.9}
+              posX={3}
+              posY={2}
+              img={DFSREC_BL}
+              imgWidth={4}
+              imgLength={2}
+            />
+            <CementPole
+              posZ={-4.1}
+              posX={3}
+              posY={-2}
+            />
+            {/* Bradley Walker */}
+            <Image
+              posZ={-1.9}
+              posX={0}
+              posY={2}
+              img={DFSREC_BW}
+              imgWidth={4}
+              imgLength={2}
+            />
+            <CementPole
+              posZ={-2.1}
+              posX={0}
+              posY={-2}
+            />
+            {/* Dalia Brosen */}
+            <Image
+              posZ={.1}
+              posX={-3}
+              posY={2}
+              img={JNJREC_DB}
+              imgWidth={4}
+              imgLength={2}
+            />
+            <CementPole
+              posZ={-.1}
+              posX={-3}
+              posY={-2}
+            />
+            {/* Testimonials Billboard */}
+            <Image
+              posZ={2.1}
+              posX={-5.8}
+              posY={2}
+              img={TESTIMONIALS}
+              imgWidth={4}
+              imgLength={2}
+            />
+            <CementPole
+              posZ={1.9}
+              posX={-6}
+              posY={-2}
+            />
+          </Suspense>
+
+          <Html
+            ref={projectsHeadingRef}
+            as='section'
+            position={[0, 8.3, 13]}
+            transform
+          >
+            <Heading
+              contactText='Projects'
+              paddingTop='15%'
+              paddingRight='20%'
+              paddingBottom='15%'
+              paddingLeft='20%'
+              border='#7AF8FF 3px solid'
+              borderRadius={10}
+              backgroundColor='#1b1b1c'
+              fontFamily='Raleway Dots'
+              fontSize='1rem'
+              fontVariant='small-caps'
+              letterSpacing='.15rem'
+              color='gold'
+              mixBlendMode='screen'
+            />
+          </Html>
+          <Suspense fallback={null}>
+            {/* <ScrollControls>
           <Scroll> */}
-          <TVScreen
-            onClick={handleClick}
-            src='tvPlane.gltf'
-            url={CC92MB}
-            zMeshPos={9.5}
-            yMeshPos={8.7}
-            xMeshPos={1}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
-          />
-          <TVScreen
-            onClick={handleClick}
-            src='tvPlane.gltf'
-            url={DFS}
-            zMeshPos={8.5}
-            yMeshPos={7.7}
-            xMeshPos={2}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams."}
+            <TVScreen
+              onClick={handleClick}
+              src='tvPlane.gltf'
+              url={CC92MB}
+              zMeshPos={9.5}
+              yMeshPos={8.7}
+              xMeshPos={1}
+              xPlaneGeometry={3}
+              yPlaneGeometry={1.5}
+              captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
+            />
+            <TVScreen
+              onClick={handleClick}
+              src='tvPlane.gltf'
+              url={DFS}
+              zMeshPos={8.5}
+              yMeshPos={7.7}
+              xMeshPos={2}
+              xPlaneGeometry={3}
+              yPlaneGeometry={1.5}
+              captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams."}
 
-          />
-          <TVScreen
-            onClick={handleClick}
-            src='tvPlane.gltf'
-            url={JNJ}
-            zMeshPos={7}
-            yMeshPos={6.7}
-            xMeshPos={3}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
-          />
-          <TVScreen
-            onClick={handleClick}
-            src='tvPlane.gltf'
-            url={SAMSHA}
-            zMeshPos={5}
-            yMeshPos={5.7}
-            xMeshPos={4}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={''}
-          />
-          <TVScreen
-            onClick={handleClick}
-            src='tvPlane.gltf'
-            url={NA}
-            zMeshPos={3}
-            yMeshPos={4.7}
-            xMeshPos={5}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
-          />
-          <TVScreen
-            onClick={handleClick}
-            src='tvPlane.gltf'
-            url={TABOOLA}
-            zMeshPos={1}
-            yMeshPos={3.7}
-            xMeshPos={6}
-            xPlaneGeometry={3}
-            yPlaneGeometry={1.5}
-            captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
-          />
+            />
+            <TVScreen
+              onClick={handleClick}
+              src='tvPlane.gltf'
+              url={JNJ}
+              zMeshPos={7}
+              yMeshPos={6.7}
+              xMeshPos={3}
+              xPlaneGeometry={3}
+              yPlaneGeometry={1.5}
+              captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
+            />
+            <TVScreen
+              onClick={handleClick}
+              src='tvPlane.gltf'
+              url={SAMSHA}
+              zMeshPos={5}
+              yMeshPos={5.7}
+              xMeshPos={4}
+              xPlaneGeometry={3}
+              yPlaneGeometry={1.5}
+              captionText={''}
+            />
+            <TVScreen
+              onClick={handleClick}
+              src='tvPlane.gltf'
+              url={NA}
+              zMeshPos={3}
+              yMeshPos={4.7}
+              xMeshPos={5}
+              xPlaneGeometry={3}
+              yPlaneGeometry={1.5}
+              captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
+            />
+            <TVScreen
+              onClick={handleClick}
+              src='tvPlane.gltf'
+              url={TABOOLA}
+              zMeshPos={1}
+              yMeshPos={3.7}
+              xMeshPos={6}
+              xPlaneGeometry={3}
+              yPlaneGeometry={1.5}
+              captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
+            />
 
-          {/* </Scroll>
+            {/* </Scroll>
           </ScrollControls> */}
-        </Suspense>
-        {/* {isActive && (<Modal />)} */}
-        <fog
-          attach='fog'
-          args={["#131216", 1, 35]}
-        />
-        <directionalLight
-          intensity={1}
-        />
-        <OrbitControls
-          maxPolarAngle={0}
-          // minAzimuthAngle={-Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-          // maxAzimuthAngle={Math.PI / 2}
-          enableDamping={false}
-        // maxPolarAngle={0}
-        // minPolarAngle={Math.PI / 2}
-        />
-        <Floor />
-        <AnimatedStars />
-        <CameraPosLogging
-          event='mousemove'
-        />
-        <Effects>
-          {/* <outlinePass attachArray='passes'/> */}
-        </Effects>
-
+          </Suspense>
+          {/* {isActive && (<Modal />)} */}
+          <fog
+            attach='fog'
+            args={["#131216", 1, 35]}
+          />
+          <directionalLight
+            intensity={1}
+          />
+          <OrbitControls
+            maxPolarAngle={0}
+            // minAzimuthAngle={-Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+            // maxAzimuthAngle={Math.PI / 2}
+            enableDamping={false}
+          // maxPolarAngle={0}
+          // minPolarAngle={Math.PI / 2}
+          />
+          <Floor />
+          <AnimatedStars />
+          <CameraPosLogging
+            event='mousemove'
+          />
+          <Effects>
+            {/* <outlinePass attachArray='passes'/> */}
+          </Effects>
+        </SheetProvider>
       </Canvas>
     </main>
   );

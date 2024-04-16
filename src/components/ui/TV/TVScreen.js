@@ -1,4 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, {
+  useEffect,
+  useState,
+  useRef
+} from 'react';
 import * as THREE from 'three';
 import { useGLTF, Html } from '@react-three/drei';
 import TVCaption from './TVCaption';
