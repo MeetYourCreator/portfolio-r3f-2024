@@ -39,15 +39,8 @@ studio.initialize();
 studio.extend(extension);
 export const App = () => {
 
-
-
-  const [isActive, setIsActive] = useState(false);
   const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
-
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
 
   return (
     <main>
@@ -62,8 +55,6 @@ export const App = () => {
         onWheel={e => setWheelPos(e.deltaZ)}
       >
         <SheetProvider sheet={demoSheet}>
-
-
           <Suspense fallback={null}>
             {/* Ben Lane */}
             <Image
@@ -165,7 +156,7 @@ export const App = () => {
             {/* <ScrollControls>
           <Scroll> */}
             <TVScreen
-              onClick={handleClick}
+
               src='tvPlane.gltf'
               url={CC92MB}
               zMeshPos={9.5}
@@ -176,7 +167,7 @@ export const App = () => {
               captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
             />
             <TVScreen
-              onClick={handleClick}
+
               src='tvPlane.gltf'
               url={DFS}
               zMeshPos={8.5}
@@ -188,7 +179,7 @@ export const App = () => {
 
             />
             <TVScreen
-              onClick={handleClick}
+
               src='tvPlane.gltf'
               url={JNJ}
               zMeshPos={7}
@@ -199,7 +190,7 @@ export const App = () => {
               captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
             />
             <TVScreen
-              onClick={handleClick}
+
               src='tvPlane.gltf'
               url={SAMSHA}
               zMeshPos={5}
@@ -210,7 +201,7 @@ export const App = () => {
               captionText={''}
             />
             <TVScreen
-              onClick={handleClick}
+
               src='tvPlane.gltf'
               url={NA}
               zMeshPos={3}
@@ -221,7 +212,7 @@ export const App = () => {
               captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
             />
             <TVScreen
-              onClick={handleClick}
+
               src='tvPlane.gltf'
               url={TABOOLA}
               zMeshPos={1}
