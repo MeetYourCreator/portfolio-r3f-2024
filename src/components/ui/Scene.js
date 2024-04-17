@@ -22,10 +22,21 @@ import JNJREC_DB from '../../assets/images/dalila-brosen-jnj_border.png';
 import DFSREC_BW from '../../assets/images/bradley-walker-dfs_border.png';
 import CTSREC_BF from '../../assets/images/brian_fowler_cts.png';
 import '../../styles.css';
+import { useCurrentSheet } from '@theatre/r3f';
+import { useFrame } from '@react-three/fiber';
+import { val } from '@theatre/core';
 
 const Scene = () => {
+
   const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
+
+  const sheet = useCurrentSheet();
+  const scroll = useScroll();
+  useFrame(() => {
+    const sequenceLength = val(sheet.sequence.pointer.length);
+    sheet.sequence.position = scroll.offset * sequenceLength;
+  });
 
   return (
     <>

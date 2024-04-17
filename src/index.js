@@ -4,8 +4,8 @@ import studio from '@theatre/studio';
 import extension from '@theatre/r3f/dist/extension';
 import App from './App';
 
-studio.initialize();
 studio.extend(extension);
+studio.initialize();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
