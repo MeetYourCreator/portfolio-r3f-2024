@@ -1,12 +1,12 @@
-import React, { Suspense, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll } from '@react-three/drei';
+import { OrbitControls, Effects, Html, ScrollControls, PointerLockControls, CameraControls, Scroll, PerspectiveCamera } from '@react-three/drei';
 
 
 import { getProject } from '@theatre/core';
 import studio from '@theatre/studio';
 import extension from '@theatre/r3f/dist/extension';
-import { SheetProvider } from '@theatre/r3f';
+import { editable as e, SheetProvider } from '@theatre/r3f';
 
 
 
@@ -33,12 +33,11 @@ import CTSREC_BF from './assets/images/brian_fowler_cts.png';
 import './styles.css';
 
 
-const demoSheet = getProject('Demo Project').sheet('Demo Sheet');
+const demoSheet = getProject('Ride Through').sheet('Scene');
 
 studio.initialize();
 studio.extend(extension);
 export const App = () => {
-
   const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
 
@@ -46,31 +45,23 @@ export const App = () => {
     <main>
       <Canvas
         style={{ width: '100%', height: '100vh' }}
-        camera={{
-          fov: 75,
-          near: 0.1,
-          far: 1000,
-          position: [0, 0, wheelPos]
-        }}
-        onWheel={e => setWheelPos(e.deltaZ)}
+        gl={{ preserveDrawingBuffer: true }}
+      // camera={{
+      //   fov: 75,
+      //   near: 0.1,
+      //   far: 1000,
+      //   position: [0, 0, wheelPos]
+      // }}
       >
-        <SheetProvider sheet={demoSheet}>
-          <Suspense fallback={null}>
-            {/* Ben Lane */}
-            <Image
-              posZ={-3.9}
-              posX={3}
-              posY={2}
-              img={DFSREC_BL}
-              imgWidth={4}
-              imgLength={2}
+        <ScrollControls pages={5}>
+          <SheetProvider sheet={demoSheet}>
+            <fog
+              attach='fog'
+              args={["#131216", 1, 35]}
             />
-            <CementPole
-              posZ={-4.1}
-              posX={3}
-              posY={-2}
+            <directionalLight
+              intensity={1}
             />
-
             {/* Ben Lane */}
             <Image
               posZ={-3.9}
@@ -127,36 +118,30 @@ export const App = () => {
               posX={-6}
               posY={-2}
             />
-          </Suspense>
-
-          <Html
-            ref={projectsHeadingRef}
-            as='section'
-            position={[0, 8.3, 13]}
-            transform
-          >
-            <Heading
-              contactText='Projects'
-              paddingTop='15%'
-              paddingRight='20%'
-              paddingBottom='15%'
-              paddingLeft='20%'
-              border='#7AF8FF 3px solid'
-              borderRadius={10}
-              backgroundColor='#1b1b1c'
-              fontFamily='Raleway Dots'
-              fontSize='1rem'
-              fontVariant='small-caps'
-              letterSpacing='.15rem'
-              color='gold'
-              mixBlendMode='screen'
-            />
-          </Html>
-          <Suspense fallback={null}>
-            {/* <ScrollControls>
-          <Scroll> */}
+            <Html
+              ref={projectsHeadingRef}
+              as='section'
+              position={[0, 8.3, 13]}
+              transform
+            >
+              <Heading
+                contactText='Projects'
+                paddingTop='15%'
+                paddingRight='20%'
+                paddingBottom='15%'
+                paddingLeft='20%'
+                border='#7AF8FF 3px solid'
+                borderRadius={10}
+                backgroundColor='#1b1b1c'
+                fontFamily='Raleway Dots'
+                fontSize='1rem'
+                fontVariant='small-caps'
+                letterSpacing='.15rem'
+                color='gold'
+                mixBlendMode='screen'
+              />
+            </Html>
             <TVScreen
-
               src='tvPlane.gltf'
               url={CC92MB}
               zMeshPos={9.5}
@@ -167,7 +152,6 @@ export const App = () => {
               captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
             />
             <TVScreen
-
               src='tvPlane.gltf'
               url={DFS}
               zMeshPos={8.5}
@@ -179,7 +163,6 @@ export const App = () => {
 
             />
             <TVScreen
-
               src='tvPlane.gltf'
               url={JNJ}
               zMeshPos={7}
@@ -190,7 +173,6 @@ export const App = () => {
               captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
             />
             <TVScreen
-
               src='tvPlane.gltf'
               url={SAMSHA}
               zMeshPos={5}
@@ -201,7 +183,6 @@ export const App = () => {
               captionText={''}
             />
             <TVScreen
-
               src='tvPlane.gltf'
               url={NA}
               zMeshPos={3}
@@ -212,7 +193,6 @@ export const App = () => {
               captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
             />
             <TVScreen
-
               src='tvPlane.gltf'
               url={TABOOLA}
               zMeshPos={1}
@@ -222,36 +202,21 @@ export const App = () => {
               yPlaneGeometry={1.5}
               captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
             />
-
-            {/* </Scroll>
-          </ScrollControls> */}
-          </Suspense>
-          {/* {isActive && (<Modal />)} */}
-          <fog
-            attach='fog'
-            args={["#131216", 1, 35]}
-          />
-          <directionalLight
-            intensity={1}
-          />
-          <OrbitControls
-            maxPolarAngle={0}
-            // minAzimuthAngle={-Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-            // maxAzimuthAngle={Math.PI / 2}
-            enableDamping={false}
-          // maxPolarAngle={0}
-          // minPolarAngle={Math.PI / 2}
-          />
-          <Floor />
-          <AnimatedStars />
-          <CameraPosLogging
-            event='mousemove'
-          />
-          <Effects>
-            {/* <outlinePass attachArray='passes'/> */}
-          </Effects>
-        </SheetProvider>
+            <Floor />
+            <AnimatedStars />
+            <PerspectiveCamera
+              theatreKey='Camera'
+              makeDefault
+              position={[0, 0, wheelPos]}
+              fov={75}
+              near={0.1}
+              far={1000}
+            />
+            <CameraPosLogging
+              event='mousemove'
+            />
+          </SheetProvider>
+        </ScrollControls>
       </Canvas>
     </main>
   );
