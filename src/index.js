@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import studio from '@theatre/studio';
 import extension from '@theatre/r3f/dist/extension';
 import App from './App';
+import './index.css';
 
 studio.extend(extension);
 studio.initialize();

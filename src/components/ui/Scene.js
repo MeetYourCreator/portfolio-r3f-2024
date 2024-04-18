@@ -28,11 +28,10 @@ import { val } from '@theatre/core';
 
 const Scene = () => {
 
-  const [wheelPos, setWheelPos] = useState(25);
   const projectsHeadingRef = useRef();
-
   const sheet = useCurrentSheet();
   const scroll = useScroll();
+
   useFrame(() => {
     const sequenceLength = val(sheet.sequence.pointer.length);
     sheet.sequence.position = scroll.offset * sequenceLength;
@@ -40,11 +39,12 @@ const Scene = () => {
 
   return (
     <>
+      <color attach='background' args={['black']} />
       <fog
         attach='fog'
         args={["#131216", 1, 35]}
       />
-      <directionalLight
+      <ambientLight
         intensity={1}
       />
       {/* Ben Lane */}
@@ -187,19 +187,22 @@ const Scene = () => {
         yPlaneGeometry={1.5}
         captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
       />
+
       <Floor />
       <AnimatedStars />
+
       <PerspectiveCamera
-        theatreKey='Camera'
         makeDefault
-        position={[0, 0, wheelPos]}
+        theatreKey='Camera'
+        position={[0, 0, 25]}
         fov={75}
         near={0.1}
         far={1000}
       />
-      <CameraPosLogging
+
+      {/* <CameraPosLogging
         event='mousemove'
-      />
+      /> */}
     </>
   );
 };
