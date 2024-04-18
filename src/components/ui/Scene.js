@@ -40,7 +40,7 @@ const Scene = () => {
 
   return (
     <>
-      <color attach='background' args={['black']} />
+      {/* <color attach='background' args={['black']} /> */}
       <fog
         attach='fog'
         args={["#131216", 1, 35]}
