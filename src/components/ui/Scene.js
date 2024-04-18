@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Html, useScroll, PerspectiveCamera } from '@react-three/drei';
+import { Html, useScroll } from '@react-three/drei';
 
 import AnimatedStars from './AnimatedStars';
 import CameraPosLogging from '../helpers/CameraPosLogging';
@@ -22,10 +22,11 @@ import JNJREC_DB from '../../assets/images/dalila-brosen-jnj_border.png';
 import DFSREC_BW from '../../assets/images/bradley-walker-dfs_border.png';
 import CTSREC_BF from '../../assets/images/brian_fowler_cts.png';
 import '../../styles.css';
-import { useCurrentSheet } from '@theatre/r3f';
+import { useCurrentSheet, PerspectiveCamera } from '@theatre/r3f';
 import { useFrame } from '@react-three/fiber';
 import { val } from '@theatre/core';
 
+import { editable as e, SheetProvider } from '@theatre/r3f';
 const Scene = () => {
 
   const projectsHeadingRef = useRef();
@@ -44,8 +45,9 @@ const Scene = () => {
         attach='fog'
         args={["#131216", 1, 35]}
       />
-      <ambientLight
+      <e.ambientLight
         intensity={1}
+        theatreKey='Light'
       />
       {/* Ben Lane */}
       <Image
@@ -187,10 +189,8 @@ const Scene = () => {
         yPlaneGeometry={1.5}
         captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
       />
-
       <Floor />
       <AnimatedStars />
-
       <PerspectiveCamera
         makeDefault
         theatreKey='Camera'
@@ -199,7 +199,6 @@ const Scene = () => {
         near={0.1}
         far={1000}
       />
-
       {/* <CameraPosLogging
         event='mousemove'
       /> */}

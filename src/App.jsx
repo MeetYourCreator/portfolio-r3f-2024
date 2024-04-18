@@ -5,7 +5,7 @@ import { getProject } from '@theatre/core';
 import { editable as e, SheetProvider } from '@theatre/r3f';
 import Scene from './components/ui/Scene';
 
-const sheet = getProject('Ride Through 2').sheet('Scene');
+const sheet = getProject('Ride Through 3').sheet('Scene');
 
 export const App = () => {
 
@@ -21,7 +21,7 @@ export const App = () => {
     //   position: [0, 0, 25]
     // }}
     >
-      <ScrollControls >
+      <ScrollControls pages={5}>
         <SheetProvider sheet={sheet}>
           <Scene />
         </SheetProvider>
