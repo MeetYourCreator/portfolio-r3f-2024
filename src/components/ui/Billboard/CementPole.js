@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
-import * as THREE from 'three';
-import { useGLTF, Html } from '@react-three/drei';
+import React, { useRef } from 'react';
+import { useGLTF } from '@react-three/drei';
 
 
 const CementPole = ({
@@ -8,7 +7,7 @@ const CementPole = ({
   posY,
   posZ
 }) => {
-  const cementPoleRef = useRef();
+
   const { nodes } = useGLTF('models/cement_pole.glb');
 
   console.log('cement pole', nodes.cement_pole);
@@ -27,4 +26,5 @@ const CementPole = ({
     </>
   );
 };
+
 export default CementPole;

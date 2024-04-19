@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import * as THREE from 'three';
 import { useLoader } from '@react-three/fiber';
-import { motion, useMotionValue } from 'framer-motion';
 
 const Image = ({ img, imgWidth, imgLength, posX, posY, posZ }) => {
   const [isActive, setIsActive] = useState();

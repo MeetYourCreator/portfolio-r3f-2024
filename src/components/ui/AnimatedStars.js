@@ -1,4 +1,4 @@
-import React, { useId, useCallback, useMemo, useRef, useEffect, useState, useContext } from 'react';
+import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 
@@ -19,4 +19,5 @@ const AnimatedStars = () => {
     </>
   );
 };
+
 export default AnimatedStars;

@@ -1,13 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
 import { Html, useScroll } from '@react-three/drei';
+import { val } from '@theatre/core';
+import { useCurrentSheet, PerspectiveCamera, editable as e } from '@theatre/r3f';
 
-import AnimatedStars from './AnimatedStars';
-import CameraPosLogging from '../helpers/CameraPosLogging';
-import TVScreen from './TV/TVScreen';
-import Floor from './Floor';
 import Heading from './Heading';
-import CementPole from './Billboard/CementPole';
+import TVScreen from './TV/TVScreen';
 import Image from './Billboard/Image';
+import CementPole from './Billboard/CementPole';
+import AnimatedStars from './AnimatedStars';
+import Floor from './Floor';
 
 import CC92MB from '../../assets/coca-cola_92mb.mp4';
 import DFS from '../../assets/dfs-mrp.mp4';
@@ -21,12 +23,9 @@ import DFSREC_BL from '../../assets/images/ben-lane-dfs_border.png';
 import JNJREC_DB from '../../assets/images/dalila-brosen-jnj_border.png';
 import DFSREC_BW from '../../assets/images/bradley-walker-dfs_border.png';
 import CTSREC_BF from '../../assets/images/brian_fowler_cts.png';
-import '../../styles.css';
-import { useCurrentSheet, PerspectiveCamera } from '@theatre/r3f';
-import { useFrame } from '@react-three/fiber';
-import { val } from '@theatre/core';
 
-import { editable as e, SheetProvider } from '@theatre/r3f';
+import '../../styles.css';
+
 const Scene = () => {
 
   const projectsHeadingRef = useRef();
@@ -40,7 +39,6 @@ const Scene = () => {
 
   return (
     <>
-      {/* <color attach='background' args={['black']} /> */}
       <fog
         attach='fog'
         args={["#131216", 1, 35]}
