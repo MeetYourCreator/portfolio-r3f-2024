@@ -34,8 +34,13 @@ export const App = () => {
 
 export default App;
 
-//TODO1: DONE Fix Camera
+//DONE: Fix Camera
 //*****
-//TODO2: Reposition video components
+
+//TODO2: Reposition components
+//TODO5: Animate keyrames
+//**********
+
+
 //TODO3: Add Contact Section with Github, Linkedin, and Email Links
 //TODO4: Fix light amount in TVScreen component

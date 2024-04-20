@@ -107,7 +107,7 @@ const Scene = () => {
         ref={projectsHeadingRef}
         as='section'
         position={[0, 8.3, 13]}
-        transform
+
       >
         <Heading
           contactText='Projects'
