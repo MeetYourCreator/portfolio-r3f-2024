@@ -38,3 +38,4 @@ export default App;
 //*****
 //TODO2: Reposition video components
 //TODO3: Add Contact Section with Github, Linkedin, and Email Links
+//TODO4: Fix light amount in TVScreen component
