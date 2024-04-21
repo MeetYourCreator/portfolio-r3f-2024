@@ -39,11 +39,11 @@ const Scene = () => {
 
   return (
     <>
-      <fog
+      {/* <fog
         attach='fog'
         args={["#131216", 1, 35]}
-      />
-      <e.ambientLight
+      /> */}
+      <ambientLight
         intensity={1}
         theatreKey='Light'
       />
@@ -128,7 +128,17 @@ const Scene = () => {
       </Html>
       <TVScreen
         src='tvPlane.gltf'
-        url={CC92MB}
+        url={NA}
+        zMeshPos={14}
+        yMeshPos={6}
+        xMeshPos={32}
+        xPlaneGeometry={3}
+        yPlaneGeometry={1.5}
+        captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
+      />
+      <TVScreen
+        src='tvPlane.gltf'
+        url={DFS}
         zMeshPos={9.5}
         yMeshPos={8.7}
         xMeshPos={1}
@@ -138,21 +148,20 @@ const Scene = () => {
       />
       <TVScreen
         src='tvPlane.gltf'
-        url={DFS}
-        zMeshPos={8.5}
-        yMeshPos={7.7}
-        xMeshPos={2}
+        url={CC92MB}
+        zMeshPos={7}
+        yMeshPos={5}
+        xMeshPos={16.7}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams."}
-
       />
       <TVScreen
         src='tvPlane.gltf'
         url={JNJ}
-        zMeshPos={7}
-        yMeshPos={6.7}
-        xMeshPos={3}
+        zMeshPos={-63}
+        yMeshPos={5}
+        xMeshPos={5.5}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
@@ -160,29 +169,20 @@ const Scene = () => {
       <TVScreen
         src='tvPlane.gltf'
         url={SAMSHA}
-        zMeshPos={5}
-        yMeshPos={5.7}
-        xMeshPos={4}
+        zMeshPos={13}
+        yMeshPos={19}
+        xMeshPos={22.1}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={''}
       />
-      <TVScreen
-        src='tvPlane.gltf'
-        url={NA}
-        zMeshPos={3}
-        yMeshPos={4.7}
-        xMeshPos={5}
-        xPlaneGeometry={3}
-        yPlaneGeometry={1.5}
-        captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
-      />
+
       <TVScreen
         src='tvPlane.gltf'
         url={TABOOLA}
-        zMeshPos={1}
-        yMeshPos={3.7}
-        xMeshPos={6}
+        zMeshPos={7}
+        yMeshPos={17}
+        xMeshPos={-7}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
