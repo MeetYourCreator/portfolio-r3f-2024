@@ -15,7 +15,10 @@ export const TVScreen = ({
   yMeshPos,
   zMeshPos,
   props,
-  captionText
+  captionText,
+  xPosCaption,
+  yPosCaption,
+  zPosCaption
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -77,14 +80,15 @@ export const TVScreen = ({
         as='section'
         // zIndexRange={[1000]}
         // distanceFactor={1.5}
-        position={isActive ? [0, -2, 15] : null}
+        position={[xPosCaption, yPosCaption, zPosCaption]}
+        // position={isActive ? [0, -2, 15] : null}
         transform
       >
-        {isActive && (
-          <>
-            <TVCaption tvCaption={captionText} />
-          </>
-        )}
+        {/* {isActive && (
+          <> */}
+        <TVCaption tvCaption={captionText} />
+        {/* </>
+        )} */}
       </Html>
     </group>
   );
