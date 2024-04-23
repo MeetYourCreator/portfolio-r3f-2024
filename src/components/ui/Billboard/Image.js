@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as THREE from 'three';
 import { useLoader } from '@react-three/fiber';
 
-const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage }) => {
+const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage, xRotImage, yRotImage, zRotImage }) => {
   // const [isActive, setIsActive] = useState();
   const texture = useLoader(THREE.TextureLoader, img);
 
@@ -20,6 +20,7 @@ const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage }) =>
       // position={isActive ? [0, 1, 14] : [posX, posY, posZ]}
       scale={1}
       position={[xPosImage, yPosImage, zPosImage]}
+      rotation={[xRotImage, yRotImage, zRotImage]}
     >
       <planeGeometry attach="geometry" args={[imgWidth, imgLength]} />
       <meshBasicMaterial attach="material" map={texture} />

@@ -49,53 +49,14 @@ const Scene = () => {
         intensity={1}
         theatreKey='Light'
       />
-      {/* Ben Lane */}
-      <Image
-        zPosImage={-3.9}
-        xPosImage={3}
-        yPosImage={2}
-        img={DFSREC_BL}
-        imgWidth={4}
-        imgLength={2}
-      />
-      <CementPole
-        posZ={-4.1}
-        posX={3}
-        posY={-2}
-      />
-      {/* Bradley Walker */}
-      <Image
-        zPosImage={-1.9}
-        xPosImage={0}
-        yPosImage={2}
-        img={DFSREC_BW}
-        imgWidth={4}
-        imgLength={2}
-      />
-      <CementPole
-        posZ={-2.1}
-        posX={0}
-        posY={-2}
-      />
-      {/* Dalia Brosen */}
-      {/* <Image
-        zPosImage={.1}
-        xPosImage={-3}
-        yPosImage={2}
-        img={JNJREC_DB}
-        imgWidth={4}
-        imgLength={2}
-      />
-      <CementPole
-        posZ={-.1}
-        posX={-3}
-        posY={-2}
-      /> */}
       {/* Testimonials Billboard */}
       <Image
         zPosImage={2.1}
         xPosImage={-5.8}
         yPosImage={2}
+        xRotImage={0}
+        yRotImage={0}
+        zRotImage={0}
         img={TESTIMONIALS}
         imgWidth={4}
         imgLength={2}
@@ -105,6 +66,58 @@ const Scene = () => {
         posX={-6}
         posY={-2}
       />
+      {/* Bradley Walker */}
+      <Image
+        zPosImage={-9}
+        xPosImage={-1.3}
+        yPosImage={2}
+        xRotImage={0}
+        yRotImage={.2}
+        zRotImage={0}
+        img={DFSREC_BW}
+        imgWidth={4}
+        imgLength={2}
+      />
+      <CementPole
+        posZ={-9.5}
+        posX={-1.5}
+        posY={-2}
+      />
+      {/* Ben Lane */}
+      <Image
+        zPosImage={-15}
+        xPosImage={3}
+        yPosImage={2}
+        xRotImage={0}
+        yRotImage={.2}
+        zRotImage={0}
+        img={DFSREC_BL}
+        imgWidth={4}
+        imgLength={2}
+      />
+      <CementPole
+        posZ={-15.2}
+        posX={3}
+        posY={-2}
+      />
+      {/* Dalia Brosen */}
+      <Image
+        zPosImage={-16}
+        xPosImage={9}
+        yPosImage={2}
+        xRotImage={0}
+        yRotImage={.2}
+        zRotImage={0}
+        img={JNJREC_DB}
+        imgWidth={4}
+        imgLength={2}
+      />
+      <CementPole
+        posZ={-16.2}
+        posX={9}
+        posY={-2}
+      />
+
       <Html
         ref={projectsHeadingRef}
         as='section'
