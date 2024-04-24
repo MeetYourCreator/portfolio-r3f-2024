@@ -36,10 +36,10 @@ export const TVScreen = ({
     return vid;
   });
 
-  const handleClick = (e) => {
-    e.stopPropagation();
-    setIsActive(!isActive);
-  };
+  // const handleClick = (e) => {
+  //   e.stopPropagation();
+  //   setIsActive(!isActive);
+  // };
 
   return (
 
@@ -51,18 +51,19 @@ export const TVScreen = ({
       <mesh
         {...props}
         ref={tvMeshRef}
-        onClick={handleClick}
+        // onClick={handleClick}
         onPointerOver={(event) => setIsHover(true)}
         onPointerOut={(event) => setIsHover(false)}
-        scale={isActive ? 2.5 : 1}
+        // scale={isActive ? 2.5 : 1}
+        // position={isActive ? [0, 1, 15] : [xMeshPos, yMeshPos, zMeshPos]}
         rotation={[0, 0, 0]}
-        position={isActive ? [0, 1, 15] : [xMeshPos, yMeshPos, zMeshPos]}
+        position={[xMeshPos, yMeshPos, zMeshPos]}
       >
         <planeGeometry
           args={[xPlaneGeometry, yPlaneGeometry]}
         />
         <meshStandardMaterial
-          emissive="white"
+          emissive="yellow"
           side={THREE.DoubleSide}
         >
           <videoTexture
