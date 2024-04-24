@@ -117,7 +117,23 @@ const Scene = () => {
         posX={9}
         posY={-2}
       />
-
+      {/* Brian Fowler */}
+      <Image
+        zPosImage={-17}
+        xPosImage={15}
+        yPosImage={2}
+        xRotImage={0}
+        yRotImage={.2}
+        zRotImage={0}
+        img={CTSREC_BF}
+        imgWidth={4}
+        imgLength={2}
+      />
+      <CementPole
+        posZ={-17.2}
+        posX={15}
+        posY={-2}
+      />
       <Html
         ref={projectsHeadingRef}
         as='section'
@@ -214,7 +230,6 @@ const Scene = () => {
         yPlaneGeometry={1.5}
         captionText={''}
       />
-
       <TVScreen
         src='tvPlane.gltf'
         url={TABOOLA}
