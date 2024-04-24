@@ -46,7 +46,7 @@ export const TVScreen = ({
     <group rotation={[Math.PI / 1, Math.PI / 1, Math.PI / 1]}>
       <mesh
         geometry={nodes.tvPlane.geometry}>
-        <meshStandardMaterial color='white' />
+        <meshStandardMaterial color='black' />
       </mesh>
       <mesh
         {...props}
@@ -63,7 +63,7 @@ export const TVScreen = ({
           args={[xPlaneGeometry, yPlaneGeometry]}
         />
         <meshStandardMaterial
-          emissive="yellow"
+          emissive="black"
           side={THREE.DoubleSide}
         >
           <videoTexture
