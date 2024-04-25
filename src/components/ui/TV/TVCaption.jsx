@@ -2,12 +2,14 @@ import React from 'react';
 
 const TVCaption = ({ tvCaption }) => {
 
+
   return (
     <>
       <section style={{
         marginTop: '10%',
         marginRight: '25%',
         marginLeft: '25%',
+        backgroundColor: 'white'
       }}>
         <p style={{
           fontFamily: 'Allerta',

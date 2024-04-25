@@ -21,10 +21,9 @@ export const TVScreen = ({
   zPosCaption
 }) => {
   const [isHover, setIsHover] = useState(false);
-  const [isActive, setIsActive] = useState(false);
   const tvMeshRef = useRef();
   const textSectionRef = useRef();
-  const { nodes } = useGLTF('models/tvPlane.gltf');
+  const { nodes } = useGLTF('models/tvPlaneWithCaption.gltf');
 
   const [video] = useState(() => {
     const vid = document.createElement('video');
@@ -36,11 +35,7 @@ export const TVScreen = ({
     return vid;
   });
 
-  // const handleClick = (e) => {
-  //   e.stopPropagation();
-  //   setIsActive(!isActive);
-  // };
-
+  console.log('nodes', nodes.Empty);
   return (
 
     <group rotation={[Math.PI / 1, Math.PI / 1, Math.PI / 1]}>
@@ -60,7 +55,7 @@ export const TVScreen = ({
           args={[xPlaneGeometry, yPlaneGeometry]}
         />
         <meshStandardMaterial
-          emissive="#000000"
+          emissive="#404040"
           side={THREE.DoubleSide}
         >
           <videoTexture

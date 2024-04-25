@@ -9,7 +9,7 @@ import './styles.css';
 const sheet = getProject('Ride Through 4').sheet('Scene');
 
 export const App = () => {
-
+  console.log('hello');
   return (
     <main>
       <Canvas
