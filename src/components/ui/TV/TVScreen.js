@@ -60,7 +60,7 @@ export const TVScreen = ({
           args={[xPlaneGeometry, yPlaneGeometry]}
         />
         <meshStandardMaterial
-          emissive="#000000"
+          emissive="#404040"
           side={THREE.DoubleSide}
         >
           <videoTexture
