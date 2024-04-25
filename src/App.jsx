@@ -15,12 +15,6 @@ export const App = () => {
       <Canvas
         style={{ width: '100%', height: '100vh' }}
         gl={{ preserveDrawingBuffer: true }}
-      // camera={{
-      //   fov: 75,
-      //   near: 0.1,
-      //   far: 1000,
-      //   position: [0, 0, 25]
-      // }}
       >
         <ScrollControls pages={5}>
           <SheetProvider sheet={sheet}>

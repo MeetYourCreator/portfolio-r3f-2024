@@ -11,8 +11,6 @@ import CementPole from './Billboard/CementPole';
 import AnimatedStars from './AnimatedStars';
 import Floor from './Floor';
 
-
-import PROJECTS from '../../assets/images/projects.png';
 import CC92MB from '../../assets/coca-cola_92mb.mp4';
 import DFS from '../../assets/dfs-mrp.mp4';
 import JNJ from '../../assets/jnjvision.mp4';
@@ -41,10 +39,6 @@ const Scene = () => {
 
   return (
     <>
-      {/* <fog
-        attach='fog'
-        args={["#131216", 1, 35]}
-      /> */}
       <ambientLight
         intensity={1}
         theatreKey='Light'
@@ -157,14 +151,6 @@ const Scene = () => {
           mixBlendMode='screen'
         />
       </Html>
-      {/* <Image
-        zPosImage={13}
-        xPosImage={0}
-        yPosImage={8.3}
-        img={PROJECTS}
-        imgWidth={4}
-        imgLength={2}
-      /> */}
       <TVScreen
         src='tvPlane.gltf'
         url={NA}

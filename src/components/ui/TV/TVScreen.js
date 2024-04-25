@@ -51,11 +51,8 @@ export const TVScreen = ({
       <mesh
         {...props}
         ref={tvMeshRef}
-        // onClick={handleClick}
         onPointerOver={(event) => setIsHover(true)}
         onPointerOut={(event) => setIsHover(false)}
-        // scale={isActive ? 2.5 : 1}
-        // position={isActive ? [0, 1, 15] : [xMeshPos, yMeshPos, zMeshPos]}
         rotation={[0, 0, 0]}
         position={[xMeshPos, yMeshPos, zMeshPos]}
       >
@@ -79,17 +76,10 @@ export const TVScreen = ({
       <Html
         ref={textSectionRef}
         as='section'
-        // zIndexRange={[1000]}
-        // distanceFactor={1.5}
         position={[xPosCaption, yPosCaption, zPosCaption]}
-        // position={isActive ? [0, -2, 15] : null}
         transform
       >
-        {/* {isActive && (
-          <> */}
         <TVCaption tvCaption={captionText} />
-        {/* </>
-        )} */}
       </Html>
     </group>
   );

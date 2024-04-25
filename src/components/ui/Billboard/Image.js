@@ -3,21 +3,10 @@ import * as THREE from 'three';
 import { useLoader } from '@react-three/fiber';
 
 const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage, xRotImage, yRotImage, zRotImage }) => {
-  // const [isActive, setIsActive] = useState();
   const texture = useLoader(THREE.TextureLoader, img);
-
-  // const handleClick = (e) => {
-  //   e.stopPropagation();
-  //   setIsActive(!isActive);
-  // };
-
-
 
   return (
     <mesh
-      // onClick={handleClick}
-      // scale={isActive ? 2 : 1}
-      // position={isActive ? [0, 1, 14] : [posX, posY, posZ]}
       scale={1}
       position={[xPosImage, yPosImage, zPosImage]}
       rotation={[xRotImage, yRotImage, zRotImage]}
