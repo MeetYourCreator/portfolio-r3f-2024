@@ -35,7 +35,7 @@ export const TVScreen = ({
     return vid;
   });
 
-  console.log('nodes', nodes.Empty);
+  // console.log('nodes', nodes.Empty);
   return (
 
     <group rotation={[Math.PI / 1, Math.PI / 1, Math.PI / 1]}>

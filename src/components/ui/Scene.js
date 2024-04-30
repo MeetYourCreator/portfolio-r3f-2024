@@ -10,6 +10,8 @@ import Image from './Billboard/Image';
 import CementPole from './Billboard/CementPole';
 import AnimatedStars from './AnimatedStars';
 import Floor from './Floor';
+import Text3D from './Text3D';
+import Text from './Text';
 
 import CC92MB from '../../assets/coca-cola_92mb.mp4';
 import DFS from '../../assets/dfs-mrp.mp4';
@@ -42,6 +44,25 @@ const Scene = () => {
       <ambientLight
         intensity={1}
         theatreKey='Light'
+      />
+      <Text />
+      <Text3D
+        url='models/text_gitHub.gltf'
+        textRotationX={1.5}
+        textRotationY={0}
+        textRotationZ={0}
+        textPosX={9}
+        textPosY={25}
+        textPosZ={0}
+      />
+      <Text3D
+        url='models/text_gitHub.gltf'
+        textRotationX={1.5}
+        textRotationY={0}
+        textRotationZ={0}
+        textPosX={9}
+        textPosY={23}
+        textPosZ={0}
       />
       {/* Testimonials Billboard */}
       <Image
