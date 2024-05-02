@@ -12,6 +12,7 @@ import AnimatedStars from './AnimatedStars';
 import Floor from './Floor';
 import Text3D from './Text3D';
 import Text from './Text';
+import NavSocialTextHtml from './NavSocialTextHtml';
 
 import CC92MB from '../../assets/coca-cola_92mb.mp4';
 import DFS from '../../assets/dfs-mrp.mp4';
@@ -45,8 +46,29 @@ const Scene = () => {
         intensity={1}
         theatreKey='Light'
       />
-      <Text />
-      <Text3D
+      <NavSocialTextHtml
+        text='LinkedIn'
+        link='https://www.linkedin.com/in/ramizackaryshamir/'
+        xPosCaption={8}
+        yPosCaption={27}
+        zPosCaption={0}
+      />
+      <NavSocialTextHtml
+        text='GitHub'
+        link='https://github.com/MeetYourCreator'
+        xPosCaption={8}
+        yPosCaption={25.5}
+        zPosCaption={0}
+      />
+      <NavSocialTextHtml
+        text='Email'
+        link='mailto:rzshamir@icloud.com'
+        xPosCaption={8}
+        yPosCaption={24}
+        zPosCaption={0}
+      />
+      {/* <Text /> */}
+      {/* <Text3D
         url='models/text_gitHub.gltf'
         textRotationX={1.5}
         textRotationY={0}
@@ -63,7 +85,7 @@ const Scene = () => {
         textPosX={9}
         textPosY={23}
         textPosZ={0}
-      />
+      /> */}
       {/* Testimonials Billboard */}
       <Image
         zPosImage={2.1}
@@ -191,9 +213,9 @@ const Scene = () => {
         zMeshPos={9.5}
         yMeshPos={8.7}
         xMeshPos={1}
-        // xPosCaption={7}
-        // yPosCaption={-8}
-        // zPosCaption={11}
+        xPosCaption={7}
+        yPosCaption={-8}
+        zPosCaption={11}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}

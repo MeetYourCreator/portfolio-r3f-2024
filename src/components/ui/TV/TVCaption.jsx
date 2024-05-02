@@ -6,10 +6,11 @@ const TVCaption = ({ tvCaption }) => {
   return (
     <>
       <section style={{
+        position: 'fixed',
         marginTop: '10%',
         marginRight: '25%',
         marginLeft: '25%',
-        backgroundColor: 'white'
+        backgroundColor: 'transparent'
       }}>
         <p style={{
           fontFamily: 'Allerta',
