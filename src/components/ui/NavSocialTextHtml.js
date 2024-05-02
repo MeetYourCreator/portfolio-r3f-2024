@@ -27,10 +27,11 @@ const NavSocialTextHtml = ({ text, link, xPosCaption, yPosCaption, zPosCaption }
           >
             <a
               href={link}
+              target='_blank'
               style={{
                 textDecoration: 'none',
                 color: '#ffffff'
-              }}
+              }} rel="noreferrer"
             >
               {text}
             </a>
