@@ -213,12 +213,12 @@ const Scene = () => {
         zMeshPos={-46}
         yMeshPos={10}
         xMeshPos={5.2}
-        xPosCaption={7}
-        yPosCaption={0}
-        zPosCaption={11}
+        xPosCaption={5.3}
+        yPosCaption={9}
+        zPosCaption={-46}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
-        captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
+        captionText={`Piloted B2B customer loyalty website for Johnson${'\n'}${'\n'}and Johnson Vision's alliance of global GPOs.`}
       />
       <TVScreen
         src='tvPlane.gltf'
