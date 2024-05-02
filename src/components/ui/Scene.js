@@ -196,19 +196,6 @@ const Scene = () => {
       </Html>
       <TVScreen
         src='tvPlane.gltf'
-        url={NA}
-        zMeshPos={14}
-        yMeshPos={6}
-        xMeshPos={32}
-        xPosCaption={7}
-        yPosCaption={1}
-        zPosCaption={11}
-        xPlaneGeometry={3}
-        yPlaneGeometry={1.5}
-        captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
-      />
-      <TVScreen
-        src='tvPlane.gltf'
         url={DFS}
         zMeshPos={9.5}
         yMeshPos={8.7}
@@ -222,23 +209,9 @@ const Scene = () => {
       />
       <TVScreen
         src='tvPlane.gltf'
-        url={CC92MB}
-        zMeshPos={7}
-        yMeshPos={5}
-        xMeshPos={16.7}
-        xPosCaption={7}
-        yPosCaption={-8}
-        zPosCaption={11}
-        xPlaneGeometry={3}
-        yPlaneGeometry={1.5}
-        captionText={`Developed in-house 100+ custom React component${'\n'}library as building blocks for redesign of customer-${'\n'}facing applications.`}
-
-      />
-      <TVScreen
-        src='tvPlane.gltf'
         url={JNJ}
         zMeshPos={-63}
-        yMeshPos={5}
+        yMeshPos={30}
         xMeshPos={5.5}
         xPosCaption={7}
         yPosCaption={0}
@@ -246,6 +219,32 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
+      />
+      <TVScreen
+        src='tvPlane.gltf'
+        url={CC92MB}
+        zMeshPos={7}
+        yMeshPos={5}
+        xMeshPos={16.7}
+        xPosCaption={16.7}
+        yPosCaption={3.8}
+        zPosCaption={7}
+        xPlaneGeometry={3}
+        yPlaneGeometry={1.5}
+        captionText={`Developed in-house 100+ custom React component${'\n'}${'\n'}library as building blocks for redesign of customer-${'\n'}${'\n'}facing applications.`}
+      />
+      <TVScreen
+        src='tvPlane.gltf'
+        url={NA}
+        zMeshPos={14}
+        yMeshPos={6}
+        xMeshPos={32}
+        xPosCaption={31.9}
+        yPosCaption={4.9}
+        zPosCaption={14}
+        xPlaneGeometry={3}
+        yPlaneGeometry={1.5}
+        captionText={`Redesigned customer-facing website for${'\n'}${'\n'}LGBTQ+ homeless center in NYC.`}
       />
       <TVScreen
         src='tvPlane.gltf'
