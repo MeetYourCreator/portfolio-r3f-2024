@@ -200,9 +200,9 @@ const Scene = () => {
         zMeshPos={14}
         yMeshPos={6}
         xMeshPos={32}
-        // xPosCaption={7}
-        // yPosCaption={-8}
-        // zPosCaption={11}
+        xPosCaption={7}
+        yPosCaption={1}
+        zPosCaption={11}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={'Redesigned customer facing website for LGBTQ+ homeless center in NYC.'}
@@ -213,12 +213,12 @@ const Scene = () => {
         zMeshPos={9.5}
         yMeshPos={8.7}
         xMeshPos={1}
-        xPosCaption={7}
-        yPosCaption={-8}
-        zPosCaption={11}
+        xPosCaption={1}
+        yPosCaption={7.4}
+        zPosCaption={9.5}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
-        captionText={"Developed in-house 100+ custom React component library as building blocks for redesign of customer-facing applications."}
+        captionText={`Overhaul and expansion of Discover's Mobile${'\n'}${'\n'}Regression Pipeline portal servicing all 15 mobile${'\n'}${'\n'}application development teams.`}
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -226,12 +226,13 @@ const Scene = () => {
         zMeshPos={7}
         yMeshPos={5}
         xMeshPos={16.7}
-        // xPosCaption={7}
-        // yPosCaption={-8}
-        // zPosCaption={11}
+        xPosCaption={7}
+        yPosCaption={-8}
+        zPosCaption={11}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
-        captionText={"Overhaul and expansion of Discover's Mobile Regression Pipeline portal servicing all 15 mobile application development teams."}
+        captionText={`Developed in-house 100+ custom React component${'\n'}library as building blocks for redesign of customer-${'\n'}facing applications.`}
+
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -239,9 +240,9 @@ const Scene = () => {
         zMeshPos={-63}
         yMeshPos={5}
         xMeshPos={5.5}
-        // xPosCaption={7}
-        // yPosCaption={-8}
-        // zPosCaption={11}
+        xPosCaption={7}
+        yPosCaption={0}
+        zPosCaption={11}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={"Piloted B2B customer loyalty website for Johnson and Johnson Vision's alliance of global GPOs."}
@@ -252,9 +253,9 @@ const Scene = () => {
         zMeshPos={13}
         yMeshPos={19}
         xMeshPos={22.1}
-        // xPosCaption={7}
-        // yPosCaption={-8}
-        // zPosCaption={11}
+        xPosCaption={7}
+        yPosCaption={1}
+        zPosCaption={11}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={''}
@@ -265,9 +266,9 @@ const Scene = () => {
         zMeshPos={7}
         yMeshPos={17}
         xMeshPos={-7}
-        // xPosCaption={7}
-        // yPosCaption={-8}
-        // zPosCaption={11}
+        xPosCaption={7}
+        yPosCaption={-8}
+        zPosCaption={11}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}

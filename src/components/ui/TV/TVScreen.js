@@ -1,10 +1,9 @@
 import React, {
-  useEffect,
   useState,
   useRef
 } from 'react';
 import * as THREE from 'three';
-import { useGLTF, Html } from '@react-three/drei';
+import { useGLTF, Html, Text } from '@react-three/drei';
 import TVCaption from './TVCaption';
 
 export const TVScreen = ({
@@ -68,15 +67,19 @@ export const TVScreen = ({
           />
         </meshStandardMaterial>
       </mesh>
-      <Html
+      {/* <Html
         ref={textSectionRef}
         as='section'
         position={[xPosCaption, yPosCaption, zPosCaption]}
         transform
       >
         <TVCaption tvCaption={captionText} />
-      </Html>
-    </group>
+      </Html> */}
+      <Text
+        position={[xPosCaption, yPosCaption, zPosCaption]}
+        scale={.11}
+      >{captionText}</Text>
+    </group >
   );
 };
 
