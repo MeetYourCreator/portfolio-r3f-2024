@@ -210,9 +210,9 @@ const Scene = () => {
       <TVScreen
         src='tvPlane.gltf'
         url={JNJ}
-        zMeshPos={-63}
-        yMeshPos={30}
-        xMeshPos={5.5}
+        zMeshPos={-46}
+        yMeshPos={10}
+        xMeshPos={5.2}
         xPosCaption={7}
         yPosCaption={0}
         zPosCaption={11}
