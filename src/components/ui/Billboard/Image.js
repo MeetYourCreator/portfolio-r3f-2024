@@ -12,7 +12,12 @@ const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage, xRot
       rotation={[xRotImage, yRotImage, zRotImage]}
     >
       <planeGeometry attach="geometry" args={[imgWidth, imgLength]} />
-      <meshBasicMaterial attach="material" map={texture} />
+      <meshStandardMaterial
+
+        attach="material"
+        emissive='#000000'
+        map={texture}
+      />
     </mesh>
   );
 };
