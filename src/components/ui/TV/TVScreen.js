@@ -4,7 +4,6 @@ import React, {
 } from 'react';
 import * as THREE from 'three';
 import { useGLTF, Html, Text } from '@react-three/drei';
-import TVCaption from './TVCaption';
 
 export const TVScreen = ({
   url,
@@ -67,14 +66,6 @@ export const TVScreen = ({
           />
         </meshStandardMaterial>
       </mesh>
-      {/* <Html
-        ref={textSectionRef}
-        as='section'
-        position={[xPosCaption, yPosCaption, zPosCaption]}
-        transform
-      >
-        <TVCaption tvCaption={captionText} />
-      </Html> */}
       <Text
         position={[xPosCaption, yPosCaption, zPosCaption]}
         scale={.11}

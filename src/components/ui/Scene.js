@@ -224,10 +224,10 @@ const Scene = () => {
         src='tvPlane.gltf'
         url={CC92MB}
         zMeshPos={7}
-        yMeshPos={5}
+        yMeshPos={9.7}
         xMeshPos={16.7}
         xPosCaption={16.7}
-        yPosCaption={3.8}
+        yPosCaption={8.4}
         zPosCaption={7}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
