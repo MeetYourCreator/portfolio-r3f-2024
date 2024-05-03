@@ -213,8 +213,8 @@ const Scene = () => {
         zMeshPos={-46}
         yMeshPos={10}
         xMeshPos={5.2}
-        xPosCaption={5.3}
-        yPosCaption={9}
+        xPosCaption={5.2}
+        yPosCaption={8.9}
         zPosCaption={-46}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
@@ -263,14 +263,14 @@ const Scene = () => {
         src='tvPlane.gltf'
         url={TABOOLA}
         zMeshPos={7}
-        yMeshPos={17}
+        yMeshPos={18}
         xMeshPos={-7}
-        xPosCaption={7}
-        yPosCaption={-8}
-        zPosCaption={11}
+        xPosCaption={-7}
+        yPosCaption={16.7}
+        zPosCaption={7}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
-        captionText={'Developed web applications for global publishers, including the New York Times, Business Insider, and MSN, on the Taboola ads platform.'}
+        captionText={`Developed web applications for global publishers,${'\n'}${'\n'}including the New York Times, Business Insider, and${'\n'}${'\n'}MSN, on the Taboola ads platform.`}
       />
       <Floor />
       <AnimatedStars />
