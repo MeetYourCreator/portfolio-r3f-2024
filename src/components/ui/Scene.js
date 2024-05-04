@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Html, useScroll } from '@react-three/drei';
+import { Html, useScroll, Text } from '@react-three/drei';
 import { val } from '@theatre/core';
 import { useCurrentSheet, PerspectiveCamera, editable as e } from '@theatre/r3f';
 
@@ -11,7 +11,7 @@ import CementPole from './Billboard/CementPole';
 import AnimatedStars from './AnimatedStars';
 import Floor from './Floor';
 import Text3D from './Text3D';
-import Text from './Text';
+// import Text from './Text';
 import NavSocialTextHtml from './NavSocialTextHtml';
 
 import CC92MB from '../../assets/coca-cola_92mb.mp4';
@@ -171,29 +171,36 @@ const Scene = () => {
         posX={15}
         posY={-2}
       />
-      <Html
-        ref={projectsHeadingRef}
-        as='section'
-        position={[-1, 7.3, 13]}
-
+      <mesh>
+        <Html
+          ref={projectsHeadingRef}
+          as='section'
+          position={[-1, 7.3, 13]}
+        >
+          <Heading
+            contactText='Projects'
+            paddingTop='15%'
+            paddingRight='20%'
+            paddingBottom='15%'
+            paddingLeft='20%'
+            border='#7AF8FF 3px solid'
+            borderRadius={10}
+            backgroundColor='#1b1b1c'
+            fontFamily='Raleway Dots'
+            fontSize='1rem'
+            fontVariant='small-caps'
+            letterSpacing='.15rem'
+            color='gold'
+            mixBlendMode='screen'
+          />
+        </Html>
+      </mesh>
+      <Text
+        position={[1, 9, 9.5]}
+        scale={2}
       >
-        <Heading
-          contactText='Projects'
-          paddingTop='15%'
-          paddingRight='20%'
-          paddingBottom='15%'
-          paddingLeft='20%'
-          border='#7AF8FF 3px solid'
-          borderRadius={10}
-          backgroundColor='#1b1b1c'
-          fontFamily='Raleway Dots'
-          fontSize='1rem'
-          fontVariant='small-caps'
-          letterSpacing='.15rem'
-          color='gold'
-          mixBlendMode='screen'
-        />
-      </Html>
+        Projects
+      </Text>
       <TVScreen
         src='tvPlane.gltf'
         url={DFS}
@@ -250,14 +257,14 @@ const Scene = () => {
         src='tvPlane.gltf'
         url={SAMSHA}
         zMeshPos={13}
-        yMeshPos={19}
+        yMeshPos={21}
         xMeshPos={22.1}
-        xPosCaption={7}
-        yPosCaption={1}
-        zPosCaption={11}
+        xPosCaption={22.05}
+        yPosCaption={20}
+        zPosCaption={14}
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
-        captionText={''}
+        captionText={'Developed Navigation application for SAMSHA.'}
       />
       <TVScreen
         src='tvPlane.gltf'
