@@ -3,7 +3,8 @@ import React, {
   useRef
 } from 'react';
 import * as THREE from 'three';
-import { useGLTF, Html, Text } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { useGLTF, Text } from '@react-three/drei';
 
 export const TVScreen = ({
   url,
@@ -32,6 +33,26 @@ export const TVScreen = ({
     vid.play();
     return vid;
   });
+
+
+  const RotatingText = () => {
+    const textRef = useRef();
+    useFrame(() => {
+      if (textRef.current) { textRef.current.rotation.y += 0.009; }
+    });
+    return (
+      <>
+        <Text
+          ref={textRef}
+          position={[xPosCaption, yPosCaption, zPosCaption]}
+          scale={.11}
+          anchorX={'center'}
+        >
+          {captionText}
+        </Text>
+      </>
+    );
+  };
 
   // console.log('nodes', nodes.Empty);
   return (
@@ -66,10 +87,7 @@ export const TVScreen = ({
           />
         </meshStandardMaterial>
       </mesh>
-      <Text
-        position={[xPosCaption, yPosCaption, zPosCaption]}
-        scale={.11}
-      >{captionText}</Text>
+      <RotatingText />
     </group >
   );
 };

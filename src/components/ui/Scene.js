@@ -40,6 +40,7 @@ const Scene = () => {
     sheet.sequence.position = scroll.offset * sequenceLength;
   });
 
+
   return (
     <>
       <ambientLight
@@ -67,26 +68,6 @@ const Scene = () => {
         yPosCaption={24}
         zPosCaption={0}
       />
-      {/* <Text /> */}
-      {/* <Text3D
-        url='models/text_gitHub.gltf'
-        textRotationX={1.5}
-        textRotationY={0}
-        textRotationZ={0}
-        textPosX={9}
-        textPosY={25}
-        textPosZ={0}
-      />
-      <Text3D
-        url='models/text_gitHub.gltf'
-        textRotationX={1.5}
-        textRotationY={0}
-        textRotationZ={0}
-        textPosX={9}
-        textPosY={23}
-        textPosZ={0}
-      /> */}
-      {/* Testimonials Billboard */}
       <Image
         zPosImage={2.1}
         xPosImage={-5.8}
@@ -198,6 +179,7 @@ const Scene = () => {
       <Text
         position={[1, 9, 9.5]}
         scale={2}
+        anchorX={'left'}
       >
         Projects
       </Text>
