@@ -9,6 +9,7 @@ import TVScreen from './TV/TVScreen';
 import Image from './Billboard/Image';
 import CementPole from './Billboard/CementPole';
 import AnimatedStars from './AnimatedStars';
+import AnimatedSparkles from './AnimatedSparkles';
 import Floor from './Floor';
 import Text3D from './Text3D';
 // import Text from './Text';
@@ -176,13 +177,13 @@ const Scene = () => {
           />
         </Html>
       </mesh>
-      <Text
+      {/* <Text
         position={[1, 9, 9.5]}
         scale={2}
         anchorX={'left'}
       >
         Projects
-      </Text>
+      </Text> */}
       <TVScreen
         src='tvPlane.gltf'
         url={DFS}
@@ -195,6 +196,12 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Overhaul and expansion of Discover's Mobile${'\n'}${'\n'}Regression Pipeline portal servicing all 15 mobile${'\n'}${'\n'}application development teams.`}
+      />
+      <AnimatedSparkles
+        xPos={5}
+        yPos={11}
+        zPos={17}
+        colorFloat32Array={230}
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -263,6 +270,7 @@ const Scene = () => {
       />
       <Floor />
       <AnimatedStars />
+
       <PerspectiveCamera
         makeDefault
         theatreKey='Camera'
