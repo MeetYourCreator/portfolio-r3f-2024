@@ -8,7 +8,6 @@ import App from './App';
 // studio.initialize();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
 root.render(
   <Suspense fallback={null}>
     <App />
