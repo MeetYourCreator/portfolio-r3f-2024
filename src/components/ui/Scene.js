@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Html, useScroll, Text } from '@react-three/drei';
+import { Html, useScroll } from '@react-three/drei';
 import { val } from '@theatre/core';
 import { useCurrentSheet, PerspectiveCamera, editable as e } from '@theatre/r3f';
 
@@ -11,7 +11,7 @@ import CementPole from './Billboard/CementPole';
 import AnimatedStars from './AnimatedStars';
 import AnimatedSparkles from './AnimatedSparkles';
 import Floor from './Floor';
-import Text3D from './Text3D';
+// import Text3D from './Text3D';
 // import Text from './Text';
 import NavSocialTextHtml from './NavSocialTextHtml';
 

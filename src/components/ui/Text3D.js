@@ -1,6 +1,5 @@
 import React from 'react';
-import * as THREE from 'three';
-import { useGLTF, Html } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 const Text3D = ({ url, textRotationX, textRotationY, textRotationZ, textPosX, textPosY, textPosZ }) => {
 
   const { nodes } = useGLTF(url);

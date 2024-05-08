@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as THREE from 'three';
 import { useLoader } from '@react-three/fiber';
 
@@ -13,7 +13,6 @@ const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage, xRot
     >
       <planeGeometry attach="geometry" args={[imgWidth, imgLength]} />
       <meshStandardMaterial
-
         attach="material"
         emissive='#000000'
         map={texture}
