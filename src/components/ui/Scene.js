@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html, useScroll } from '@react-three/drei';
 import { val } from '@theatre/core';
-import { useCurrentSheet, PerspectiveCamera, editable as e } from '@theatre/r3f';
+import { useCurrentSheet, PerspectiveCamera } from '@theatre/r3f';
 
 import Heading from './Heading';
 import TVScreen from './TV/TVScreen';
