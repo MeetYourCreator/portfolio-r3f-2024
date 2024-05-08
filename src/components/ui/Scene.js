@@ -203,6 +203,72 @@ const Scene = () => {
         zPos={17}
         colorFloat32Array={230}
       />
+      <AnimatedSparkles
+        xPos={6}
+        yPos={11}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={7}
+        yPos={11}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={8}
+        yPos={11}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={7}
+        yPos={10}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={8}
+        yPos={10}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={9}
+        yPos={10}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={10}
+        yPos={10}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={11}
+        yPos={9}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={12}
+        yPos={9}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={11}
+        yPos={11}
+        zPos={17}
+        colorFloat32Array={230}
+      />
+      <AnimatedSparkles
+        xPos={12}
+        yPos={10}
+        zPos={17}
+        colorFloat32Array={230}
+      />
       <TVScreen
         src='tvPlane.gltf'
         url={JNJ}

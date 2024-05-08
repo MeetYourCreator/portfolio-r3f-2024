@@ -6,7 +6,8 @@ const AnimatedSparkles = ({ xPos, yPos, zPos, colorFloat32Array }) => {
   return (
     <>
       <Sparkles
-        opacity={1}
+        count={100}
+        opacity={3}
         size={8}
         amount={19}
         color={colorFloat32Array}

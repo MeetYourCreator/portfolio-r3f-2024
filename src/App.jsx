@@ -4,9 +4,10 @@ import { ScrollControls } from '@react-three/drei';
 import { getProject } from '@theatre/core';
 import { editable as e, SheetProvider } from '@theatre/r3f';
 import Scene from './components/ui/Scene';
+import scrollState from './camera-scroll-state.json';
 import './styles.css';
 
-const sheet = getProject('Ride Through 4').sheet('Scene');
+const sheet = getProject('Camera Scroll Animation', { state: scrollState }).sheet('Scene');
 
 export const App = () => {
   console.log('hello');
@@ -16,7 +17,11 @@ export const App = () => {
         style={{ width: '100%', height: '100vh' }}
         gl={{ preserveDrawingBuffer: true }}
       >
-        <ScrollControls pages={5}>
+        <ScrollControls
+          pages={7}
+          damping={1}
+          maxSpeed={.1}
+        >
           <SheetProvider sheet={sheet}>
             <Scene />
           </SheetProvider>
