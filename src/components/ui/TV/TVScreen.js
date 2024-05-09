@@ -27,7 +27,7 @@ export const TVScreen = ({
   const [video] = useState(() => {
     const vid = document.createElement('video');
     vid.src = url;
-    vid.crossOrigin = "Anonymous";
+    vid.crossOrigin = "anonymous";
     vid.loop = true;
     vid.muted = true;
     vid.play();
@@ -42,6 +42,7 @@ export const TVScreen = ({
     useFrame(() => {
       if (textRef.current) { textRef.current.rotation.y += 0.009; }
     });
+
     return (
       <>
         <Text
