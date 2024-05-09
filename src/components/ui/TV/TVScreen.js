@@ -31,6 +31,8 @@ export const TVScreen = ({
     vid.loop = true;
     vid.muted = true;
     vid.play();
+    vid.playsInline = true;
+    vid.setAttribute('playsinline', true);
     return vid;
   });
 
