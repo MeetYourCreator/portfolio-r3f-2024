@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -45,5 +45,6 @@
   },
   "devDependencies": {
     "@react-three/drei": "^9.97.6"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
