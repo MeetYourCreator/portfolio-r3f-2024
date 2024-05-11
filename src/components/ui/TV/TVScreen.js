@@ -30,12 +30,13 @@ export const TVScreen = ({
     vid.crossOrigin = "anonymous";
     vid.loop = true;
     vid.muted = true;
-    vid.play();
+    vid.load();
     vid.playsInline = true;
     vid.setAttribute('playsinline', true);
     return vid;
   });
 
+  video.play();
 
   const RotatingText = () => {
     const textRef = useRef();
