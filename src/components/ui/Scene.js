@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html, useScroll } from '@react-three/drei';
 import { val } from '@theatre/core';
@@ -41,6 +41,15 @@ const Scene = () => {
     sheet.sequence.position = scroll.offset * sequenceLength;
   });
 
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.location.reload();
+      console.log('load');
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.removeEventListener('beforeunload', handleBeforeUnload);
+
+  }, []);
 
   return (
     <>

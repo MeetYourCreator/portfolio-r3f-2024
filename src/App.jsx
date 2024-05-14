@@ -10,7 +10,7 @@ import './styles.css';
 const sheet = getProject('Camera Scroll Animation', { state: scrollState }).sheet('Scene');
 
 export const App = () => {
-  console.log('hello');
+
   return (
     <main>
       <Canvas
