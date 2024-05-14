@@ -170,20 +170,20 @@ const Scene = () => {
           position={[-1, 7.3, 13]}
         >
           <Heading
-            contactText='Projects'
+            contactText={`Projects ${'\n'}${'\n'} Rami Zackary Shamir`}
             paddingTop='15%'
             paddingRight='20%'
             paddingBottom='15%'
             paddingLeft='20%'
             border='#7AF8FF 3px solid'
             borderRadius={10}
-            backgroundColor='#1b1b1c'
-            fontFamily='Raleway Dots'
+            backgroundColor='#e5e5e5'
+            fontFamily='Allerta'
             fontSize='1rem'
             fontVariant='small-caps'
             letterSpacing='.15rem'
-            color='gold'
-            mixBlendMode='screen'
+            color='#000000'
+          // mixBlendMode='screen'
           />
         </Html>
       </e.mesh>
