@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html, useScroll } from '@react-three/drei';
 import { val } from '@theatre/core';
-import { useCurrentSheet, PerspectiveCamera } from '@theatre/r3f';
+import { useCurrentSheet, PerspectiveCamera, editable as e } from '@theatre/r3f';
 
 import Heading from './Heading';
 import TVScreen from './TV/TVScreen';
@@ -163,7 +163,7 @@ const Scene = () => {
         posX={15}
         posY={-2}
       />
-      <mesh>
+      <e.mesh theatreKey='Heading'>
         <Html
           ref={projectsHeadingRef}
           as='section'
@@ -186,7 +186,7 @@ const Scene = () => {
             mixBlendMode='screen'
           />
         </Html>
-      </mesh>
+      </e.mesh>
       {/* <Text
         position={[1, 9, 9.5]}
         scale={2}
