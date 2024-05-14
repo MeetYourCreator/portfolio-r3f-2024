@@ -48,6 +48,8 @@ const Scene = () => {
     };
     window.addEventListener('beforeunload', handleBeforeUnload);
     window.removeEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.removeEventListener('beforeunload', handleBeforeUnload);
 
   }, []);
 
