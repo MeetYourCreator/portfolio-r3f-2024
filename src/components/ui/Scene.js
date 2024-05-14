@@ -46,11 +46,10 @@ const Scene = () => {
       window.location.reload();
       console.log('load');
     };
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    setTimeout(() => window.addEventListener('beforeunload', handleBeforeUnload), 100);
     window.removeEventListener('beforeunload', handleBeforeUnload);
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    setTimeout(() => window.addEventListener('beforeunload', handleBeforeUnload), 100);
     window.removeEventListener('beforeunload', handleBeforeUnload);
-
   }, []);
 
   return (
