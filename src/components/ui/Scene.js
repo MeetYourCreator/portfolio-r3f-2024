@@ -41,17 +41,6 @@ const Scene = () => {
     sheet.sequence.position = scroll.offset * sequenceLength;
   });
 
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      window.location.reload();
-      console.log('load');
-    };
-    setTimeout(() => window.addEventListener('beforeunload', handleBeforeUnload), 100);
-    window.removeEventListener('beforeunload', handleBeforeUnload);
-    setTimeout(() => window.addEventListener('beforeunload', handleBeforeUnload), 100);
-    window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, []);
-
   return (
     <>
       <ambientLight
