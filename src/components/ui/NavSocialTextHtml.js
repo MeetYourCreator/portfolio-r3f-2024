@@ -9,16 +9,14 @@ const NavSocialTextHtml = ({ text, link, xPosCaption, yPosCaption, zPosCaption }
         position={[xPosCaption, yPosCaption, zPosCaption]}
       >
         <section style={{
-          position: 'fixed',
-          marginTop: '10%',
-          marginRight: '25%',
-          marginLeft: '25%',
-          backgroundColor: 'transparent'
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'center'
         }}>
           <p style={{
             fontFamily: 'Allerta',
-            fontSize: '.9rem',
-            lineHeight: 1.5,
+            fontSize: '2vh',
             textAlign: 'justify',
             textJustify: 'inter-word',
             hyphens: 'auto',
