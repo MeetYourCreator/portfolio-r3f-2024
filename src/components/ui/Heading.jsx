@@ -9,17 +9,19 @@ const Heading = () => {
                 flexDirection: 'column',
                 justifyContent: 'space-evenly',
                 alignItems: 'center',
-                width: 170,
-                height: 100,
+                width: 'fit-content',
+                minWidth: 170,
+                height: 'fit-content',
+                minHeight: 100,
+                padding: '0 6px 7px 6px',
                 border: '#7AF8FF 3px solid',
                 borderRadius: 10,
                 backgroundColor: '#e5e5e5'
             }}>
                 <p style={{
                     fontFamily: 'Allerta',
-                    fontSize: '29px',
+                    fontSize: '7vw',
                     fontVariant: 'small-caps',
-                    // fontVariant: '.15rem',
                     color: '#000000',
                 }}
                 >
@@ -27,9 +29,8 @@ const Heading = () => {
                 </p>
                 <p style={{
                     fontFamily: 'Allerta',
-                    fontSize: '15px',
+                    fontSize: '2vw',
                     fontVariant: 'small-caps',
-                    // fontVariant: '.15rem',
                     color: '#000000',
                 }}
                 >
