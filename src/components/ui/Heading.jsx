@@ -1,30 +1,39 @@
 import React from 'react';
 
-const Heading = ({ contactText, paddingTop, paddingRight, paddingBottom, paddingLeft, border, borderRadius, backgroundColor, fontFamily, fontSize, fontWeight, fontVariant, letterSpacing, color, mixBlendMode }) => {
+const Heading = () => {
 
     return (
         <>
             <section style={{
-                width: 'fit-content',
-                paddingTop: paddingTop,
-                paddingRight: paddingRight,
-                paddingBottom: paddingBottom,
-                paddingLeft: paddingLeft,
-                border: border,
-                borderRadius: borderRadius,
-                backgroundColor: backgroundColor
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-evenly',
+                alignItems: 'center',
+                width: 170,
+                height: 100,
+                border: '#7AF8FF 3px solid',
+                borderRadius: 10,
+                backgroundColor: '#e5e5e5'
             }}>
                 <p style={{
-                    fontFamily: fontFamily,
-                    fontSize: fontSize,
-                    fontWeight: fontWeight,
-                    fontVariant: fontVariant,
-                    letterSpacing: letterSpacing,
-                    color: color,
-                    mixBlendMode: mixBlendMode,
+                    fontFamily: 'Allerta',
+                    fontSize: '29px',
+                    fontVariant: 'small-caps',
+                    // fontVariant: '.15rem',
+                    color: '#000000',
                 }}
                 >
-                    {contactText}
+                    Projects
+                </p>
+                <p style={{
+                    fontFamily: 'Allerta',
+                    fontSize: '15px',
+                    fontVariant: 'small-caps',
+                    // fontVariant: '.15rem',
+                    color: '#000000',
+                }}
+                >
+                    Rami Zackary Shamir
                 </p>
             </section>
         </>

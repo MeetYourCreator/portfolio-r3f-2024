@@ -158,31 +158,9 @@ const Scene = () => {
           as='section'
           position={[-1, 7.3, 13]}
         >
-          <Heading
-            contactText={`Projects ${'\n'}${'\n'} Rami Zackary Shamir`}
-            paddingTop='15%'
-            paddingRight='20%'
-            paddingBottom='15%'
-            paddingLeft='20%'
-            border='#7AF8FF 3px solid'
-            borderRadius={10}
-            backgroundColor='#e5e5e5'
-            fontFamily='Allerta'
-            fontSize='1rem'
-            fontVariant='small-caps'
-            letterSpacing='.15rem'
-            color='#000000'
-          // mixBlendMode='screen'
-          />
+          <Heading />
         </Html>
       </e.mesh>
-      {/* <Text
-        position={[1, 9, 9.5]}
-        scale={2}
-        anchorX={'left'}
-      >
-        Projects
-      </Text> */}
       <TVScreen
         src='tvPlane.gltf'
         url={DFS}
