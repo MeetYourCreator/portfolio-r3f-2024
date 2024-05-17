@@ -1,7 +1,8 @@
 import React, {
   useState,
   useRef,
-  Suspense
+  Suspense,
+  useEffect
 } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
@@ -38,7 +39,9 @@ export const TVScreen = ({
     return vid;
   });
 
-  video.play();
+  useEffect(() => {
+    video.play();
+  }, [video]);
 
   const RotatingText = () => {
     const textRef = useRef();
