@@ -173,6 +173,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Overhaul and expansion of Discover's Mobile${'\n'}${'\n'}Regression Pipeline portal servicing all 15 mobile${'\n'}${'\n'}application development teams.`}
+        fallbackUI={null}
       />
       <AnimatedSparkles
         xPos={5}
@@ -258,6 +259,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Piloted B2B customer loyalty website for Johnson${'\n'}${'\n'}and Johnson Vision's alliance of global GPOs.`}
+        fallbackUI={null}
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -271,6 +273,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Developed in-house 100+ custom React component${'\n'}${'\n'}library as building blocks for redesign of customer-${'\n'}${'\n'}facing applications.`}
+        fallbackUI={null}
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -284,6 +287,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Redesigned customer-facing website for${'\n'}${'\n'}LGBTQ+ homeless center in NYC.`}
+        fallbackUI={null}
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -297,6 +301,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={'Developed Navigation application for SAMSHA.'}
+        fallbackUI={null}
       />
       <TVScreen
         src='tvPlane.gltf'
@@ -310,10 +315,10 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Developed web applications for global publishers,${'\n'}${'\n'}including the New York Times, Business Insider, and${'\n'}${'\n'}MSN, on the Taboola ads platform.`}
+        fallbackUI={null}
       />
       <Floor />
       <AnimatedStars />
-
       <PerspectiveCamera
         makeDefault
         theatreKey='Camera'
@@ -322,9 +327,6 @@ const Scene = () => {
         near={0.1}
         far={1000}
       />
-      {/* <CameraPosLogging
-        event='mousemove'
-      /> */}
     </>
   );
 };
