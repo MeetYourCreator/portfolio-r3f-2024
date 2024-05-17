@@ -22,7 +22,7 @@ export const TVScreen = ({
   zPosCaption,
   fallbackUI
 }) => {
-  // const [isHover, setIsHover] = useState(false);
+
   const tvMeshRef = useRef();
 
   const { nodes } = useGLTF('models/tvPlaneWithCaption.gltf');
@@ -73,8 +73,6 @@ export const TVScreen = ({
         <mesh
           {...props}
           ref={tvMeshRef}
-          // onPointerOver={(event) => setIsHover(true)}
-          // onPointerOut={(event) => setIsHover(false)}
           rotation={[0, 0, 0]}
           position={[xMeshPos, yMeshPos, zMeshPos]}
         >
