@@ -59,8 +59,8 @@ export const TVScreen = ({
   };
 
   return (
+    <>
 
-    <group rotation={[Math.PI / 1, Math.PI / 1, Math.PI / 1]}>
       <mesh
         geometry={nodes.tvPlane.geometry}>
         <meshStandardMaterial color='#000000' />
@@ -91,7 +91,8 @@ export const TVScreen = ({
         </meshStandardMaterial>
       </mesh>
       <RotatingText />
-    </group >
+
+    </>
   );
 };
 
