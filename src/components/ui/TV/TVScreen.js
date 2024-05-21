@@ -65,38 +65,35 @@ export const TVScreen = ({
   return (
     <>
       <Suspense fallback={fallbackUI}>
-        <group {...props} dispose={null}>
-          <mesh
-            geometry={nodes.tvPlane.geometry}
-          // material={materials.canvas}
+        <mesh
+          geometry={nodes.tvPlane.geometry}
+        >
+          <meshStandardMaterial color='#000000' />
+        </mesh>
+        <mesh
+          {...props}
+          ref={tvMeshRef}
+          rotation={[0, 0, 0]}
+          position={[xMeshPos, yMeshPos, zMeshPos]}
+        >
+          <planeGeometry
+            args={[xPlaneGeometry, yPlaneGeometry]}
+          />
+          <meshStandardMaterial
+            emissive="#404040"
+            side={THREE.DoubleSide}
           >
-            <meshStandardMaterial color='#000000' />
-          </mesh>
-          <mesh
-            {...props}
-            ref={tvMeshRef}
-            rotation={[0, 0, 0]}
-            position={[xMeshPos, yMeshPos, zMeshPos]}
-          >
-            <planeGeometry
-              args={[xPlaneGeometry, yPlaneGeometry]}
+            <videoTexture
+              attach='map'
+              args={[video]}
             />
-            <meshStandardMaterial
-              emissive="#404040"
-              side={THREE.DoubleSide}
-            >
-              <videoTexture
-                attach='map'
-                args={[video]}
-              />
-              <videoTexture
-                attach='emissiveMap'
-                args={[video]}
-              />
-            </meshStandardMaterial>
-          </mesh>
-        </group>
-      </Suspense>
+            <videoTexture
+              attach='emissiveMap'
+              args={[video]}
+            />
+          </meshStandardMaterial>
+        </mesh>
+      </Suspense >
       <RotatingText />
 
     </>

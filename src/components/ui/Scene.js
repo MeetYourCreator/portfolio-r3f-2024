@@ -20,6 +20,7 @@ import SAMSHA from '../../assets/samsha.mp4';
 import NA from '../../assets/new-alternatives.mp4';
 import TABOOLA from '../../assets/taboola.mp4';
 
+import DFSStill from '../../assets/images/dfs-still.jpg';
 import TESTIMONIALS from '../../assets/images/testimonials-heading_border.png';
 import DFSREC_BL from '../../assets/images/ben-lane-dfs_border.png';
 import JNJREC_DB from '../../assets/images/dalila-brosen-jnj_border.png';
@@ -171,7 +172,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Overhaul and expansion of Discover's Mobile${'\n'}${'\n'}Regression Pipeline portal servicing all 15 mobile${'\n'}${'\n'}application development teams.`}
-        fallbackUI={null}
+        fallbackUI={DFSStill}
       />
       <AnimatedSparkles
         xPos={5}
