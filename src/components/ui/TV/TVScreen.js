@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import * as THREE from 'three';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { useGLTF, Text } from '@react-three/drei';
+import { Text } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 export const TVScreen = ({
