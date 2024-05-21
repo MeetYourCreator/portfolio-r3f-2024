@@ -4,9 +4,10 @@ import React, {
   Suspense,
 } from 'react';
 import * as THREE from 'three';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
-import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+
+import { useGLTF } from '@react-three/drei';
 
 export const TVScreen = ({
   url,
@@ -25,8 +26,7 @@ export const TVScreen = ({
 
   const tvMeshRef = useRef();
 
-  // const { nodes, materials } = useGLTF('models/tvPlaneWithCaption.gltf');
-  const { nodes, materials } = useLoader(GLTFLoader, 'models/tvPlaneWithCaption.gltf');
+  const { nodes } = useGLTF('models/tvPlaneWithCaption.gltf');
   const [video] = useState(() => {
     const vid = document.createElement('video');
     vid.src = url;
@@ -68,7 +68,7 @@ export const TVScreen = ({
         <group {...props} dispose={null}>
           <mesh
             geometry={nodes.tvPlane.geometry}
-            material={materials.canvas}
+          // material={materials.canvas}
           >
             <meshStandardMaterial color='#000000' />
           </mesh>
