@@ -2,7 +2,17 @@ import React from 'react';
 import * as THREE from 'three';
 import { useLoader } from '@react-three/fiber';
 
-const Image = ({ img, imgWidth, imgLength, xPosImage, yPosImage, zPosImage, xRotImage, yRotImage, zRotImage }) => {
+const Image = ({
+  img,
+  imgWidth,
+  imgLength,
+  xPosImage,
+  yPosImage,
+  zPosImage,
+  xRotImage,
+  yRotImage,
+  zRotImage
+}) => {
   const texture = useLoader(THREE.TextureLoader, img);
 
   return (

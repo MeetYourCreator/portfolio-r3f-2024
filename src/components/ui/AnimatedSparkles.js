@@ -1,7 +1,12 @@
 import React from 'react';
 import { Sparkles } from '@react-three/drei';
 
-const AnimatedSparkles = ({ xPos, yPos, zPos, colorFloat32Array }) => {
+const AnimatedSparkles = ({
+  xPos,
+  yPos,
+  zPos,
+  colorFloat32Array
+}) => {
 
   return (
     <>

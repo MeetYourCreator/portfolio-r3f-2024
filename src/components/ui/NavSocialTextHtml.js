@@ -1,7 +1,13 @@
 import React from 'react';
 import { Html } from '@react-three/drei';
 
-const NavSocialTextHtml = ({ text, link, xPosCaption, yPosCaption, zPosCaption }) => {
+const NavSocialTextHtml = ({
+  text,
+  link,
+  xPosCaption,
+  yPosCaption,
+  zPosCaption
+}) => {
 
   return (
     <>

@@ -1,6 +1,11 @@
-import React from 'react';
+import React,
+{ Suspense }
+  from 'react';
 import { Canvas } from '@react-three/fiber';
-import { ScrollControls } from '@react-three/drei';
+import {
+  ScrollControls,
+  Loader
+} from '@react-three/drei';
 import { getProject } from '@theatre/core';
 import { SheetProvider } from '@theatre/r3f';
 import Scene from './components/ui/Scene';
@@ -13,20 +18,23 @@ export const App = () => {
 
   return (
     <main>
-      <Canvas
-        style={{ width: '100%', height: '100vh' }}
-        gl={{ preserveDrawingBuffer: true }}
-      >
-        <ScrollControls
-          pages={7}
-          damping={1}
-          maxSpeed={.1}
+      <Loader />
+      <Suspense fallback={null}>
+        <Canvas
+          style={{ width: '100%', height: '100vh' }}
+          gl={{ preserveDrawingBuffer: true }}
         >
-          <SheetProvider sheet={sheet}>
-            <Scene />
-          </SheetProvider>
-        </ScrollControls>
-      </Canvas>
+          <ScrollControls
+            pages={7}
+            damping={1}
+            maxSpeed={.1}
+          >
+            <SheetProvider sheet={sheet}>
+              <Scene />
+            </SheetProvider>
+          </ScrollControls>
+        </Canvas>
+      </Suspense>
     </main>
   );
 };
