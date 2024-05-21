@@ -4,8 +4,9 @@ import React, {
   Suspense,
 } from 'react';
 import * as THREE from 'three';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useLoader } from '@react-three/fiber';
 import { useGLTF, Text } from '@react-three/drei';
+import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 export const TVScreen = ({
   url,
@@ -19,13 +20,13 @@ export const TVScreen = ({
   xPosCaption,
   yPosCaption,
   zPosCaption,
-  fallbackUI
+  fallbackUI,
 }) => {
 
   const tvMeshRef = useRef();
 
-  const { nodes } = useGLTF('models/tvPlaneWithCaption.gltf');
-
+  // const { nodes, materials } = useGLTF('models/tvPlaneWithCaption.gltf');
+  const { nodes, materials } = useLoader(GLTFLoader, 'models/tvPlaneWithCaption.gltf');
   const [video] = useState(() => {
     const vid = document.createElement('video');
     vid.src = url;
@@ -64,33 +65,37 @@ export const TVScreen = ({
   return (
     <>
       <Suspense fallback={fallbackUI}>
-        <mesh
-          geometry={nodes.tvPlane.geometry}>
-          <meshStandardMaterial color='#000000' />
-        </mesh>
-        <mesh
-          {...props}
-          ref={tvMeshRef}
-          rotation={[0, 0, 0]}
-          position={[xMeshPos, yMeshPos, zMeshPos]}
-        >
-          <planeGeometry
-            args={[xPlaneGeometry, yPlaneGeometry]}
-          />
-          <meshStandardMaterial
-            emissive="#404040"
-            side={THREE.DoubleSide}
+        <group {...props} dispose={null}>
+          <mesh
+            geometry={nodes.tvPlane.geometry}
+            material={materials.canvas}
           >
-            <videoTexture
-              attach='map'
-              args={[video]}
+            <meshStandardMaterial color='#000000' />
+          </mesh>
+          <mesh
+            {...props}
+            ref={tvMeshRef}
+            rotation={[0, 0, 0]}
+            position={[xMeshPos, yMeshPos, zMeshPos]}
+          >
+            <planeGeometry
+              args={[xPlaneGeometry, yPlaneGeometry]}
             />
-            <videoTexture
-              attach='emissiveMap'
-              args={[video]}
-            />
-          </meshStandardMaterial>
-        </mesh>
+            <meshStandardMaterial
+              emissive="#404040"
+              side={THREE.DoubleSide}
+            >
+              <videoTexture
+                attach='map'
+                args={[video]}
+              />
+              <videoTexture
+                attach='emissiveMap'
+                args={[video]}
+              />
+            </meshStandardMaterial>
+          </mesh>
+        </group>
       </Suspense>
       <RotatingText />
 
