@@ -179,7 +179,7 @@ const Scene = () => {
         xPlaneGeometry={3}
         yPlaneGeometry={1.5}
         captionText={`Overhaul and expansion of Discover's Mobile${'\n'}${'\n'}Regression Pipeline portal servicing all 15 mobile${'\n'}${'\n'}application development teams.`}
-        fallbackUI={DFSStill}
+        fallbackUI={<img src={DFSStill} alt='Discover Financial Services' />}
       />
       <AnimatedSparkles
         xPos={5}
