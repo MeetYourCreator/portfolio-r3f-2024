@@ -17,25 +17,25 @@ const sheet = getProject('Camera Scroll Animation', { state: scrollState }).shee
 export const App = () => {
 
   return (
-    <main>
-      <Loader />
-      <Suspense fallback={null}>
-        <Canvas
-          style={{ width: '100%', height: '100vh' }}
-          gl={{ preserveDrawingBuffer: true }}
-        >
+    <>
+      <Canvas
+        style={{ width: '100%', height: '100vh', backgroundColor: '#131216' }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={null}>
           <ScrollControls
-            pages={7}
-            damping={1}
-            maxSpeed={.1}
+            pages={25}
+            damping={3}
+            maxSpeed={.03}
           >
             <SheetProvider sheet={sheet}>
               <Scene />
             </SheetProvider>
           </ScrollControls>
-        </Canvas>
-      </Suspense>
-    </main>
+        </Suspense>
+      </Canvas>
+      <Loader />
+    </>
   );
 };
 
