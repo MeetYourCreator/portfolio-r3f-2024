@@ -21,7 +21,7 @@ export const TVScreen = ({
   xPosCaption,
   yPosCaption,
   zPosCaption,
-  // fallbackUI,
+  fallbackUI,
 }) => {
 
   const tvMeshRef = useRef();
