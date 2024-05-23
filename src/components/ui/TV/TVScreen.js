@@ -50,7 +50,7 @@ export const TVScreen = ({
   }, [video]);
 
 
-  const isVideoPlaying = video => !!(video.currenTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+  // const isVideoPlaying = video => !!(video.currenTime > 0 && !video.paused && !video.ended && video.readyState > 2);
 
 
   const RotatingText = () => {
