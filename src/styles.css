@@ -6,6 +6,9 @@ padding: 0;
 
 body {
   overflow: hidden;
+  -webkit-scrollbar {
+    display: none;
+  }
 }
 
 .allerta-regular {
