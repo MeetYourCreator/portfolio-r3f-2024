@@ -9,8 +9,6 @@ const CementPole = ({
 
   const { nodes } = useGLTF('models/cement_pole.glb');
 
-  console.log('cement pole', nodes.cement_pole);
-
   return (
     <>
       <mesh

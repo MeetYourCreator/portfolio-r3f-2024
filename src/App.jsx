@@ -1,10 +1,10 @@
-import React,
-{ Suspense }
+import React
+  // { Suspense }
   from 'react';
 import { Canvas } from '@react-three/fiber';
 import {
   ScrollControls,
-  Loader
+  // Loader
 } from '@react-three/drei';
 import { getProject } from '@theatre/core';
 import { SheetProvider } from '@theatre/r3f';
@@ -22,19 +22,19 @@ export const App = () => {
         style={{ width: '100%', height: '100vh', backgroundColor: '#131216' }}
         gl={{ preserveDrawingBuffer: true }}
       >
-        <Suspense fallback={null}>
-          <ScrollControls
-            pages={25}
-            damping={3}
-            maxSpeed={.03}
-          >
-            <SheetProvider sheet={sheet}>
-              <Scene />
-            </SheetProvider>
-          </ScrollControls>
-        </Suspense>
+        {/* <Suspense fallback={null}> */}
+        <ScrollControls
+          pages={25}
+          damping={3}
+          maxSpeed={.03}
+        >
+          <SheetProvider sheet={sheet}>
+            <Scene />
+          </SheetProvider>
+        </ScrollControls>
+        {/* </Suspense> */}
       </Canvas>
-      <Loader />
+      {/* <Loader /> */}
     </>
   );
 };
