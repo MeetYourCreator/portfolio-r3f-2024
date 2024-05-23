@@ -6,9 +6,10 @@ padding: 0;
 
 body {
   overflow: hidden;
-  -webkit-scrollbar {
+  ::-webkit-scrollbar {
     display: none;
-  }
+  };
+  -ms-overflow-style: none;
 }
 
 .allerta-regular {
