@@ -26,7 +26,7 @@ export const App = () => {
         <ScrollControls
           pages={25}
           damping={3}
-          maxSpeed={.03}
+          maxSpeed={.02}
         >
           <SheetProvider sheet={sheet}>
             <Scene />
