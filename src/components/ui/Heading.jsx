@@ -20,7 +20,7 @@ const Heading = () => {
             }}>
                 <p style={{
                     fontFamily: 'Allerta',
-                    fontSize: '7vw',
+                    fontSize: 'fit-content',
                     fontVariant: 'small-caps',
                     color: '#000000',
                 }}
