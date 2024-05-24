@@ -19,8 +19,8 @@ const Heading = () => {
                 backgroundColor: '#e5e5e5'
             }}>
                 <p style={{
-                    fontFamily: 'Allerta',
-                    fontSize: 'fit-content',
+                    // fontFamily: 'Allerta',
+                    fontSize: '7vw',
                     fontVariant: 'small-caps',
                     color: '#000000',
                 }}
@@ -28,7 +28,7 @@ const Heading = () => {
                     Projects
                 </p>
                 <p style={{
-                    fontFamily: 'Allerta',
+                    // fontFamily: 'Allerta',
                     fontSize: '2vw',
                     fontVariant: 'small-caps',
                     color: '#000000',

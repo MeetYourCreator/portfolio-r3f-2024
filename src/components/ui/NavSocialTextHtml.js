@@ -21,7 +21,7 @@ const NavSocialTextHtml = ({
           alignItems: 'center'
         }}>
           <p style={{
-            fontFamily: 'Allerta',
+            // fontFamily: 'Allerta',
             fontSize: '2vh',
             textAlign: 'justify',
             textJustify: 'inter-word',
