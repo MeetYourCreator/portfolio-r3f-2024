@@ -11,15 +11,3 @@ body {
   };
   -ms-overflow-style: none;
 }
-
-.allerta-regular {
-  font-family: "Allerta", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.raleway-dots-regular {
-  font-family: "Raleway Dots", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}

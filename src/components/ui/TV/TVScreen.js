@@ -6,7 +6,11 @@ import React, {
 } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
+import {
+  Text,
+  // useAspect,
+  useTexture,
+} from '@react-three/drei';
 
 import { useGLTF } from '@react-three/drei';
 
@@ -26,7 +30,6 @@ export const TVScreen = ({
 }) => {
 
   const tvMeshRef = useRef();
-
 
   const { nodes } = useGLTF('models/tvPlaneWithCaption.gltf');
   const [video] = useState(() => {
@@ -52,6 +55,10 @@ export const TVScreen = ({
 
   // const isVideoPlaying = video => !!(video.currenTime > 0 && !video.paused && !video.ended && video.readyState > 2);
 
+  const FallbackMaterial = ({ src }) => {
+    const texture = useTexture(src);
+    return <meshBasicMaterial map={texture} toneMapped={false} />;
+  };
 
   const RotatingText = () => {
     const textRef = useRef();
@@ -75,7 +82,7 @@ export const TVScreen = ({
 
   return (
     <>
-      <Suspense fallback={fallbackUI}>
+      <Suspense fallback={<FallbackMaterial src={fallbackUI} />}>
         <mesh
           geometry={nodes.tvPlane.geometry}
         >
