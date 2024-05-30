@@ -24,8 +24,8 @@ export const App = () => {
       >
         {/* <Suspense fallback={null}> */}
         <ScrollControls
-          pages={25}
-          damping={3}
+          pages={30}
+          damping={5}
           maxSpeed={.02}
         >
           <SheetProvider sheet={sheet}>
