@@ -62,7 +62,7 @@ const Scene = () => {
       />
       <NavSocialTextHtml
         text='GitHub'
-        link='https://github.com/MeetYourCreator'
+        link='https://github.com/ramizackaryshamir'
         xPosCaption={8}
         yPosCaption={25.5}
         zPosCaption={0}
